@@ -25,8 +25,14 @@ PUK::Application* PUK::create_application(){
 
     ECS::Entity e1;
 
-    auto uPtr = std::make_unique<ECS::TransformComponent>(10.0f, 10.0f);
-    //e1.add_component<ECS::TransformComponent>(uPtr);
+	ECS::TransformComponent comp{ 10.0f, 10.0f };
+	ECS::SpriteComponent comp2{ 100, 100 };
+	//e1.get_component_by_type_id<ECS::TransformComponent>();
+	e1.add_component<ECS::SpriteComponent>(ECS::SpriteComponent(100, 100));
+	ECS::SpriteComponent* c = e1.get_component_by_type_id<ECS::SpriteComponent>();
+	//e1.get_component_by_type_id(0);
+
+	PUK_CLIENT_INFO("SpriteComponent nuevamente: {}, {}", c->h, c->w);
 
 
     return new SandBox();
