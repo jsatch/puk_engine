@@ -7,97 +7,99 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B68AC1CC0D182C3EE591400C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E21F5234E590246666FCC874 /* main.cpp */; };
+		4244907FA2554A833FD630C1848C7DA6258B8F045AEEAE8 /* libPUKEngine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90A5FAF6D7295550D5B827C9F9AD5842609398E0D5EEE390 /* libPUKEngine.a */; };
+		C54C38DBB68AC1CC334AB5E30D182C3EEC99B774E591400C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 956E2449E21F52346CEFA940E59024665BE2FBB166FCC874 /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A7D90F68D76ADE5AB2781DA8 /* PBXContainerItemProxy */ = {
+		A2953137A7D90F688A270D6ED76ADE5AD33CBAD8B2781DA8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 7A2D59D472153D86A9710014 /* ../PUKEngine/PUKEngine.xcodeproj */;
+			containerPortal = 3BFAE1FDA6176435676EEB5D24959F5ED4D276709A51C83 /* ../PUKEngine/PUKEngine.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 395454F45066F0264082EB34;
-			remoteInfo = PUKEngine.lib;
+			remoteGlobalIDString = E68453988CAF48D5BFCA919586154A474C10D0EA79B0A715;
+			remoteInfo = libPUKEngine.a;
 		};
-		FA13820129A550F304B29041 /* PBXContainerItemProxy */ = {
+		A507726DFA1382018C994EA529A550F3D5AEFC0F04B29041 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 7A2D59D472153D86A9710014 /* ../PUKEngine/PUKEngine.xcodeproj */;
+			containerPortal = 3BFAE1FDA6176435676EEB5D24959F5ED4D276709A51C83 /* ../PUKEngine/PUKEngine.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 49AB5E5A4A5E5B4CBE402C9A;
-			remoteInfo = PUKEngine.lib;
+			remoteGlobalIDString = 6FCD3CFDF96DA1B1D163A89F6A9754D21566B00E6C5705B;
+			remoteInfo = libPUKEngine.a;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7A2D59D472153D86A9710014 /* PUKEngine.lib */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "PUKEngine.xcodeproj"; path = ../PUKEngine/PUKEngine.xcodeproj; sourceTree = SOURCE_ROOT; };
-		94AD9308379BB9BAC6C19948 /* Sandbox.exe */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = Sandbox.exe; path = Sandbox.exe; sourceTree = BUILT_PRODUCTS_DIR; };
-		E21F5234E590246666FCC874 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = "<group>"; };
+		3A59FDDAF8CF3E9821DDC1179D21DC4A5E802E7AAF5A24D8 /* Sandbox */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = Sandbox; path = Sandbox; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BFAE1FDA6176435676EEB5D24959F5ED4D276709A51C83 /* libPUKEngine.a */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "PUKEngine.xcodeproj"; path = ../PUKEngine/PUKEngine.xcodeproj; sourceTree = SOURCE_ROOT; };
+		956E2449E21F52346CEFA940E59024665BE2FBB166FCC874 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = ../Sandbox/src/main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		CC3F44787091E22A82CA2AB8 /* Frameworks */ = {
+		FF90C550F9B9A8084385968349CD3CBA4889B789CC4B6E48 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4244907FA2554A833FD630C1848C7DA6258B8F045AEEAE8 /* libPUKEngine.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6849586FFB54B1614389A6AF /* Sandbox */ = {
+		6BA25BEC6849586F1BA17E95FB54B1613BFEBA1D4389A6AF /* Sandbox */ = {
 			isa = PBXGroup;
 			children = (
-				E21F5234E590246666FCC874 /* main.cpp */,
-				A6C936B49B3FADE6EA134CF4 /* Products */,
-				9D968EAA920D05DCE0E0A4EA /* Projects */,
+				956E2449E21F52346CEFA940E59024665BE2FBB166FCC874 /* main.cpp */,
+				DE2FD571A6C936B48E134D4D9B3FADE6BA17F9BDEA134CF4 /* Products */,
+				DE2FDC7F9D968EAA8E13545B920D05DCBA1800CBE0E0A4EA /* Projects */,
 			);
 			name = Sandbox;
 			sourceTree = "<group>";
 		};
-		9D968EAA920D05DCE0E0A4EA /* Projects */ = {
+		90902844CC504FA8BE5E4636F48B085AA18D7A03DC2695E8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7A2D59D472153D86A9710014 /* PUKEngine.xcodeproj */,
+				90A5FAF6D7295550D5B827C9F9AD5842609398E0D5EEE390 /* libPUKEngine.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DE2FD571A6C936B48E134D4D9B3FADE6BA17F9BDEA134CF4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A59FDDAF8CF3E9821DDC1179D21DC4A5E802E7AAF5A24D8 /* Sandbox */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DE2FDC7F9D968EAA8E13545B920D05DCBA1800CBE0E0A4EA /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				3BFAE1FDA6176435676EEB5D24959F5ED4D276709A51C83 /* PUKEngine.xcodeproj */,
 			);
 			name = Projects;
-			sourceTree = "<group>";
-		};
-		A6C936B49B3FADE6EA134CF4 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				94AD9308379BB9BAC6C19948 /* Sandbox.exe */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		CC504FA8F48B085ADC2695E8 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				ECA4453F985AB1F1C5D10B7F /* PUKEngine.lib */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B90B29EE2A964260D997682E /* Sandbox */ = {
+		1C53DD1E2DDA37EA3F005ACEF9A52F0CC9018816484C1BE /* Sandbox */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BA7A8CD75ECD2A8971057317 /* Build configuration list for PBXNativeTarget "Sandbox" */;
+			buildConfigurationList = FF90C54FE7F4F06743859682380885194889B788BA86B6A7 /* Build configuration list for PBXNativeTarget "Sandbox" */;
 			buildPhases = (
-				3C26C518E07962CAF2B1AB58 /* Resources */,
-				A5D3DE6F4A267C215C5EC4AF /* Sources */,
-				CC3F44787091E22A82CA2AB8 /* Frameworks */,
+				FF90C55469A128A843859686B9B4BD5A4889B78D3C32EEE8 /* Resources */,
+				FF90C554D34E41FF438596872361D6B14889B78DA5E0083F /* Sources */,
+				FF90C550F9B9A8084385968349CD3CBA4889B789CC4B6E48 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				BA088CB1E2434563C9DED2F1 /* PBXTargetDependency */,
+				90A3227BBA088CB1BE71406DE2434563A1A0743AC9DED2F1 /* PBXTargetDependency */,
 			);
 			name = Sandbox;
 			productInstallPath = "$(HOME)/bin";
 			productName = Sandbox;
-			productReference = 94AD9308379BB9BAC6C19948 /* Sandbox.exe */;
+			productReference = 3A59FDDAF8CF3E9821DDC1179D21DC4A5E802E7AAF5A24D8 /* Sandbox */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -108,33 +110,33 @@
 			buildConfigurationList = 1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "Sandbox" */;
 			compatibilityVersion = "Xcode 3.2";
 			hasScannedForEncodings = 1;
-			mainGroup = 6849586FFB54B1614389A6AF /* Sandbox */;
+			mainGroup = 6BA25BEC6849586F1BA17E95FB54B1613BFEBA1D4389A6AF /* Sandbox */;
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = CC504FA8F48B085ADC2695E8 /* Products */;
-					ProjectRef = 7A2D59D472153D86A9710014 /* PUKEngine.xcodeproj */;
+					ProductGroup = 90902844CC504FA8BE5E4636F48B085AA18D7A03DC2695E8 /* Products */;
+					ProjectRef = 3BFAE1FDA6176435676EEB5D24959F5ED4D276709A51C83 /* PUKEngine.xcodeproj */;
 				},
 			);
 			projectRoot = "";
 			targets = (
-				B90B29EE2A964260D997682E /* Sandbox.exe */,
+				1C53DD1E2DDA37EA3F005ACEF9A52F0CC9018816484C1BE /* Sandbox */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		ECA4453F985AB1F1C5D10B7F /* PUKEngine.lib */ = {
+		90A5FAF6D7295550D5B827C9F9AD5842609398E0D5EEE390 /* libPUKEngine.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = PUKEngine.lib;
-			remoteRef = A7D90F68D76ADE5AB2781DA8 /* PBXContainerItemProxy */;
+			path = libPUKEngine.a;
+			remoteRef = A2953137A7D90F688A270D6ED76ADE5AD33CBAD8B2781DA8 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
-		3C26C518E07962CAF2B1AB58 /* Resources */ = {
+		FF90C55469A128A843859686B9B4BD5A4889B78D3C32EEE8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -144,21 +146,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A5D3DE6F4A267C215C5EC4AF /* Sources */ = {
+		FF90C554D34E41FF438596872361D6B14889B78DA5E0083F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B68AC1CC0D182C3EE591400C /* main.cpp in Sources */,
+				C54C38DBB68AC1CC334AB5E30D182C3EEC99B774E591400C /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		BA088CB1E2434563C9DED2F1 /* PBXTargetDependency */ = {
+		90A3227BBA088CB1BE71406DE2434563A1A0743AC9DED2F1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = PUKEngine.lib;
-			targetProxy = FA13820129A550F304B29041 /* PBXContainerItemProxy */;
+			name = libPUKEngine.a;
+			targetProxy = A507726DFA1382018C994EA529A550F3D5AEFC0F04B29041 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -166,52 +168,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		2B419C1D537C54CF3B17E25D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CONFIGURATION_BUILD_DIR = "../../bin/Debug-windows-x86_64/Sandbox";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_DYNAMIC_NO_PIC = NO;
-				INSTALL_PATH = /usr/local/bin;
-				PRODUCT_NAME = Sandbox.exe;
-			};
-			name = Debug;
-		};
-		48DC32576AA7DF89A75D0897 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CONFIGURATION_BUILD_DIR = "../../bin/Release-windows-x86_64/Sandbox";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_DYNAMIC_NO_PIC = NO;
-				INSTALL_PATH = /usr/local/bin;
-				PRODUCT_NAME = Sandbox.exe;
-			};
-			name = Release;
-		};
-		D2EB7F98773E1D4A897665D8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				CLANG_CXX_LANGUAGE_STANDARD = "c++1z";
-				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
-				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
-				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				OBJROOT = "../../bin-int/Release-windows-x86_64/Sandbox";
-				ONLY_ACTIVE_ARCH = NO;
-				SYMROOT = "../../bin/Release-windows-x86_64/Sandbox";
-				USER_HEADER_SEARCH_PATHS = (
-					../../vendor/spdlog/include,
-					../PUKEngine/include,
-				);
-			};
-			name = Release;
-		};
-		E3FEB5DE874A3F10A21B0C1E /* Debug */ = {
+		26D73137E3FEB5DE3B45183E874A3F1091D594EFA21B0C1E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
@@ -224,13 +181,58 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				OBJROOT = "../../bin-int/Debug-windows-x86_64/Sandbox";
+				OBJROOT = "../../bin-int/Debug-macosx-x86_64/Sandbox";
 				ONLY_ACTIVE_ARCH = YES;
-				SYMROOT = "../../bin/Debug-windows-x86_64/Sandbox";
+				SYMROOT = "../../bin/Debug-macosx-x86_64/Sandbox";
 				USER_HEADER_SEARCH_PATHS = (
 					../../vendor/spdlog/include,
 					../PUKEngine/include,
 				);
+			};
+			name = Debug;
+		};
+		39B49866D2EB7F9821385BA3773E1D4A5DDAC906897665D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++1z";
+				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
+				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OBJROOT = "../../bin-int/Release-macosx-x86_64/Sandbox";
+				ONLY_ACTIVE_ARCH = NO;
+				SYMROOT = "../../bin/Release-macosx-x86_64/Sandbox";
+				USER_HEADER_SEARCH_PATHS = (
+					../../vendor/spdlog/include,
+					../PUKEngine/include,
+				);
+			};
+			name = Release;
+		};
+		BB4E484FFB7591E778D21D8E43E67619A1291F788854827 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CONFIGURATION_BUILD_DIR = "../../bin/Release-macosx-x86_64/Sandbox";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_DYNAMIC_NO_PIC = NO;
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = Sandbox;
+			};
+			name = Release;
+		};
+		CFB6CBD5C5DDD7ADD1C4C971EC04075FE6D2F365530AFDED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CONFIGURATION_BUILD_DIR = "../../bin/Debug-macosx-x86_64/Sandbox";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_DYNAMIC_NO_PIC = NO;
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = Sandbox;
 			};
 			name = Debug;
 		};
@@ -240,17 +242,17 @@
 		1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "Sandbox" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E3FEB5DE874A3F10A21B0C1E /* Debug */,
-				D2EB7F98773E1D4A897665D8 /* Release */,
+				26D73137E3FEB5DE3B45183E874A3F1091D594EFA21B0C1E /* Debug */,
+				39B49866D2EB7F9821385BA3773E1D4A5DDAC906897665D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		BA7A8CD75ECD2A8971057317 /* Build configuration list for PBXNativeTarget "Sandbox.exe" */ = {
+		FF90C54FE7F4F06743859682380885194889B788BA86B6A7 /* Build configuration list for PBXNativeTarget "Sandbox" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2B419C1D537C54CF3B17E25D /* Debug */,
-				48DC32576AA7DF89A75D0897 /* Release */,
+				CFB6CBD5C5DDD7ADD1C4C971EC04075FE6D2F365530AFDED /* Debug */,
+				BB4E484FFB7591E778D21D8E43E67619A1291F788854827 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

@@ -51,6 +51,10 @@ project "PUKEngine"
 
     defines { "PUK_OSX" }
 
+    frameworkdirs
+    {
+      "/Library/Frameworks/"
+    }
     links
     {
       "SDL2.framework",

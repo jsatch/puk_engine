@@ -2,7 +2,10 @@
 
 #ifdef PUK_WIN
 #include "SDL.h"
+#else
+#include "SDL2/SDL.h"
 #endif // PUK_WIN
+
 
 #include "ECS/System.hpp"
 #include "ECS/Entity.hpp"
