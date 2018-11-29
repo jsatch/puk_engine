@@ -1,4 +1,5 @@
-./bin/
-./bin-int/
+bin/
+bin-int/
 */.vs/
 .DS_Store
+!/vendor/bin/
