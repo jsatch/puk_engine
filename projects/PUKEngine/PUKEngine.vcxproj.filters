@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{89AF369E-F58E-B539-FEA6-40106A051C9B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\ECS">
+      <UniqueIdentifier>{5340C031-BFF5-3827-48EA-32FEB49E2F2B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\PUK">
+      <UniqueIdentifier>{6871C031-D426-3927-5D1B-33FEC9CF2F2B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\Systems">
+      <UniqueIdentifier>{907EE853-FC09-5618-051B-D90C7125B218}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\Worlds">
+      <UniqueIdentifier>{73AD312A-5F7B-2530-480F-9656347C0195}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ECS">
+      <UniqueIdentifier>{F76D2FA9-634D-AE44-6C65-391BD8C314A6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\PUK">
+      <UniqueIdentifier>{0C9F2FA9-787E-AE44-8196-391BEDF414A6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Systems">
+      <UniqueIdentifier>{34DEBD24-A093-361A-2988-30F1953C2D1E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Worlds">
+      <UniqueIdentifier>{97A84738-8360-8985-EC67-62E1D83E2476}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\ECS\Component.hpp">
+      <Filter>include\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ECS\Entity.hpp">
+      <Filter>include\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ECS\System.hpp">
+      <Filter>include\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PUK.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PUK\Application.hpp">
+      <Filter>include\PUK</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PUK\EntryPoint.hpp">
+      <Filter>include\PUK</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PUK\Log.hpp">
+      <Filter>include\PUK</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Systems\RenderSystem.hpp">
+      <Filter>include\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Worlds\WorldManager.hpp">
+      <Filter>include\Worlds</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ECS\Component.cpp">
+      <Filter>src\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ECS\Entity.cpp">
+      <Filter>src\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ECS\System.cpp">
+      <Filter>src\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PUK\Application.cpp">
+      <Filter>src\PUK</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PUK\Log.cpp">
+      <Filter>src\PUK</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Systems\RenderSystem.cpp">
+      <Filter>src\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Worlds\WorldManager.cpp">
+      <Filter>src\Worlds</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
