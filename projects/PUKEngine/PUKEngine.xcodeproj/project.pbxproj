@@ -1,0 +1,334 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0AC525AAFEC46F1C83AF83EA /* RenderSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F91762123D2B334430FCB852 /* RenderSystem.cpp */; };
+		1F6B598D63B9FEFFA5E137CD /* System.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F5F493F517C0412754756A35 /* System.cpp */; };
+		86BA94FDCB093A6F0D30733D /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 856FB065A73B5D97E3F086A5 /* Entity.cpp */; };
+		88B3ABBCB997A3AECCAFD9FC /* Log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C33E4A84E9647A36506B70C4 /* Log.cpp */; };
+		8EF309898E95ECBBC8EA9FC9 /* WorldManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EC4E073143B37A23F5C19571 /* WorldManager.cpp */; };
+		C1C1B709192729FBCB354549 /* Component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B1541CB1E34D67635D2CA2F1 /* Component.cpp */; };
+		C36B13A06554AF925C7BC1E0 /* Application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BAD322849D085DAD0DED868 /* Application.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		117E2F8B5EE125BDD50025CB /* Entity.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; name = Entity.hpp; path = include/ECS/Entity.hpp; sourceTree = "<group>"; };
+		1856A677BA404269B16754B7 /* WorldManager.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; name = WorldManager.hpp; path = include/Worlds/WorldManager.hpp; sourceTree = "<group>"; };
+		1C27F278FB450CAAD74E68B8 /* RenderSystem.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; name = RenderSystem.hpp; path = include/Systems/RenderSystem.hpp; sourceTree = "<group>"; };
+		38DF97370702EAE98E113D77 /* Component.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; name = Component.hpp; path = include/ECS/Component.hpp; sourceTree = "<group>"; };
+		395454F45066F0264082EB34 /* PUKEngine.lib */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = PUKEngine.lib; path = PUKEngine.lib; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BAD322849D085DAD0DED868 /* Application.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Application.cpp; path = src/PUK/Application.cpp; sourceTree = "<group>"; };
+		856FB065A73B5D97E3F086A5 /* Entity.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Entity.cpp; path = src/ECS/Entity.cpp; sourceTree = "<group>"; };
+		9CE0371BEA432D4D60622D5B /* System.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; name = System.hpp; path = include/ECS/System.hpp; sourceTree = "<group>"; };
+		B1541CB1E34D67635D2CA2F1 /* Component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Component.cpp; path = src/ECS/Component.cpp; sourceTree = "<group>"; };
+		BBB7796ECDE1562001D23FAE /* Application.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; name = Application.hpp; path = include/PUK/Application.hpp; sourceTree = "<group>"; };
+		C33E4A84E9647A36506B70C4 /* Log.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Log.cpp; path = src/PUK/Log.cpp; sourceTree = "<group>"; };
+		CBC97EFEB010873033FDB53E /* EntryPoint.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; name = EntryPoint.hpp; path = include/PUK/EntryPoint.hpp; sourceTree = "<group>"; };
+		DD8E17CA05C8D07CED645E0A /* Log.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; name = Log.hpp; path = include/PUK/Log.hpp; sourceTree = "<group>"; };
+		E698FE470CBF2DF973C62487 /* PUK.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; name = PUK.hpp; path = include/PUK.hpp; sourceTree = "<group>"; };
+		EC4E073143B37A23F5C19571 /* WorldManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = WorldManager.cpp; path = src/Worlds/WorldManager.cpp; sourceTree = "<group>"; };
+		F5F493F517C0412754756A35 /* System.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = System.cpp; path = src/ECS/System.cpp; sourceTree = "<group>"; };
+		F91762123D2B334430FCB852 /* RenderSystem.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = RenderSystem.cpp; path = src/Systems/RenderSystem.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8CD9F064904AC29611B766A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		17E8DB351B59AD679CC65175 /* Worlds */ = {
+			isa = PBXGroup;
+			children = (
+				EC4E073143B37A23F5C19571 /* WorldManager.cpp */,
+			);
+			name = Worlds;
+			sourceTree = "<group>";
+		};
+		246A373F747DCBF1F6FBFD7F /* PUK */ = {
+			isa = PBXGroup;
+			children = (
+				7BAD322849D085DAD0DED868 /* Application.cpp */,
+				C33E4A84E9647A36506B70C4 /* Log.cpp */,
+			);
+			name = PUK;
+			sourceTree = "<group>";
+		};
+		5624E51BFA7782CD0CAFCB5B /* PUK */ = {
+			isa = PBXGroup;
+			children = (
+				BBB7796ECDE1562001D23FAE /* Application.hpp */,
+				CBC97EFEB010873033FDB53E /* EntryPoint.hpp */,
+				DD8E17CA05C8D07CED645E0A /* Log.hpp */,
+			);
+			name = PUK;
+			sourceTree = "<group>";
+		};
+		5775D4184366DFCA959E7A58 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				7FA15735CFB4EBE752331D75 /* ECS */,
+				246A373F747DCBF1F6FBFD7F /* PUK */,
+				85AE340F289C5AC1B7C23A4F /* Systems */,
+				17E8DB351B59AD679CC65175 /* Worlds */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		5E8C725002DF100215175890 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				9EE0D29143337043556BB8D1 /* ECS */,
+				5624E51BFA7782CD0CAFCB5B /* PUK */,
+				E698FE470CBF2DF973C62487 /* PUK.hpp */,
+				672643EB8D4C739DF4536A2B /* Systems */,
+				B0747911C7871443B7A30F51 /* Worlds */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		672643EB8D4C739DF4536A2B /* Systems */ = {
+			isa = PBXGroup;
+			children = (
+				1C27F278FB450CAAD74E68B8 /* RenderSystem.hpp */,
+			);
+			name = Systems;
+			sourceTree = "<group>";
+		};
+		7FA15735CFB4EBE752331D75 /* ECS */ = {
+			isa = PBXGroup;
+			children = (
+				B1541CB1E34D67635D2CA2F1 /* Component.cpp */,
+				856FB065A73B5D97E3F086A5 /* Entity.cpp */,
+				F5F493F517C0412754756A35 /* System.cpp */,
+			);
+			name = ECS;
+			sourceTree = "<group>";
+		};
+		85AE340F289C5AC1B7C23A4F /* Systems */ = {
+			isa = PBXGroup;
+			children = (
+				F91762123D2B334430FCB852 /* RenderSystem.cpp */,
+			);
+			name = Systems;
+			sourceTree = "<group>";
+		};
+		9EE0D29143337043556BB8D1 /* ECS */ = {
+			isa = PBXGroup;
+			children = (
+				38DF97370702EAE98E113D77 /* Component.hpp */,
+				117E2F8B5EE125BDD50025CB /* Entity.hpp */,
+				9CE0371BEA432D4D60622D5B /* System.hpp */,
+			);
+			name = ECS;
+			sourceTree = "<group>";
+		};
+		A6C936B49B3FADE6EA134CF4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				395454F45066F0264082EB34 /* PUKEngine.lib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B0747911C7871443B7A30F51 /* Worlds */ = {
+			isa = PBXGroup;
+			children = (
+				1856A677BA404269B16754B7 /* WorldManager.hpp */,
+			);
+			name = Worlds;
+			sourceTree = "<group>";
+		};
+		E16EE40664B441788DFBC246 /* PUKEngine */ = {
+			isa = PBXGroup;
+			children = (
+				5E8C725002DF100215175890 /* include */,
+				5775D4184366DFCA959E7A58 /* src */,
+				A6C936B49B3FADE6EA134CF4 /* Products */,
+			);
+			name = PUKEngine;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		49AB5E5A4A5E5B4CBE402C9A /* PUKEngine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7B1538C37E860AF5FFF2AF03 /* Build configuration list for PBXNativeTarget "PUKEngine" */;
+			buildPhases = (
+				FCC1710400324336819EE744 /* Resources */,
+				666E8A5B69DF5C8DEB4C009B /* Sources */,
+				8CD9F064904AC29611B766A4 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PUKEngine;
+			productName = PUKEngine;
+			productReference = 395454F45066F0264082EB34 /* PUKEngine.lib */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "PUKEngine" */;
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 1;
+			mainGroup = E16EE40664B441788DFBC246 /* PUKEngine */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				49AB5E5A4A5E5B4CBE402C9A /* PUKEngine.lib */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FCC1710400324336819EE744 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		666E8A5B69DF5C8DEB4C009B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1C1B709192729FBCB354549 /* Component.cpp in Sources */,
+				86BA94FDCB093A6F0D30733D /* Entity.cpp in Sources */,
+				1F6B598D63B9FEFFA5E137CD /* System.cpp in Sources */,
+				C36B13A06554AF925C7BC1E0 /* Application.cpp in Sources */,
+				88B3ABBCB997A3AECCAFD9FC /* Log.cpp in Sources */,
+				0AC525AAFEC46F1C83AF83EA /* RenderSystem.cpp in Sources */,
+				8EF309898E95ECBBC8EA9FC9 /* WorldManager.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2E303ECF31A11101B30DB50F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++1z";
+				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
+				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					PUK_WIN,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OBJROOT = "../../bin-int/Release-windows-x86_64/PUKEngine";
+				ONLY_ACTIVE_ARCH = NO;
+				SYMROOT = "../../bin/Release-windows-x86_64/PUKEngine";
+				USER_HEADER_SEARCH_PATHS = (
+					../../vendor/spdlog/include,
+					include,
+					"../../../../cpp_libs/SDL2-devel-2.0.8-VC/SDL2/include",
+					"../../../../cpp_libs/SDL2_image-devel-2.0.3-VC/SDL2_image/include",
+				);
+			};
+			name = Release;
+		};
+		49D18A096B9D373BA8526049 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CONFIGURATION_BUILD_DIR = "../../bin/Debug-windows-x86_64/PUKEngine";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EXECUTABLE_EXTENSION = lib;
+				GCC_DYNAMIC_NO_PIC = NO;
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = PUKEngine;
+			};
+			name = Debug;
+		};
+		4B1F4B430E8B0CF54D2EB183 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CONFIGURATION_BUILD_DIR = "../../bin/Release-windows-x86_64/PUKEngine";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EXECUTABLE_EXTENSION = lib;
+				GCC_DYNAMIC_NO_PIC = NO;
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = PUKEngine;
+			};
+			name = Release;
+		};
+		95CC3B553A1ED9074C572195 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++1z";
+				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
+				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					PUK_WIN,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OBJROOT = "../../bin-int/Debug-windows-x86_64/PUKEngine";
+				ONLY_ACTIVE_ARCH = YES;
+				SYMROOT = "../../bin/Debug-windows-x86_64/PUKEngine";
+				USER_HEADER_SEARCH_PATHS = (
+					../../vendor/spdlog/include,
+					include,
+					"../../../../cpp_libs/SDL2-devel-2.0.8-VC/SDL2/include",
+					"../../../../cpp_libs/SDL2_image-devel-2.0.3-VC/SDL2_image/include",
+				);
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "PUKEngine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95CC3B553A1ED9074C572195 /* Debug */,
+				2E303ECF31A11101B30DB50F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		7B1538C37E860AF5FFF2AF03 /* Build configuration list for PBXNativeTarget "PUKEngine.lib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49D18A096B9D373BA8526049 /* Debug */,
+				4B1F4B430E8B0CF54D2EB183 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+};
+rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}
