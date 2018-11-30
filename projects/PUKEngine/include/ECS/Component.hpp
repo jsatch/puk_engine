@@ -4,8 +4,6 @@
 #include <memory>
 #include <map>
 
-#define MAX_COMPONENTS 100
-
 namespace ECS
 {
     using ComponentTypeId = size_t;
