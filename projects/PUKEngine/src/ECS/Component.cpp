@@ -17,10 +17,13 @@ ECS::TransformComponent::TransformComponent(float x, float y) : ECS::TransformCo
 ECS::TransformComponent::~TransformComponent()
 {}
 
-ECS::SpriteComponent::SpriteComponent(int w, int h) : ECS::TransformComponent::Component()
+ECS::SpriteComponent::SpriteComponent(int w, int h, std::string filename) : ECS::TransformComponent::Component()
 {
    this->w = w;
    this->h = h;
+   this->filename = filename;
 }
 ECS::SpriteComponent::~SpriteComponent()
-{}
+{
+	SDL_DestroyTexture(texture);
+}

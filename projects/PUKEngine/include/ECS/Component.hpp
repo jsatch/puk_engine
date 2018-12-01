@@ -1,5 +1,13 @@
 #pragma once
 
+#ifdef PUK_WIN
+#include "SDL.h"
+#endif // PUK_WIN
+
+#ifdef PUK_OSX
+#include "SDL2/SDL.h"
+#endif // PUK_OSX
+
 #include <iostream>
 #include <memory>
 #include <map>
@@ -44,9 +52,14 @@ namespace ECS
     struct SpriteComponent : public Component
     {
     private:
+		std::string filename = "";
+		SDL_Texture* texture;
     public:
         int w, h;
-        SpriteComponent(int w, int h);
+        SpriteComponent(int w, int h, std::string filename);
         ~SpriteComponent();
+		std::string get_filename(){ return filename; }
+		void set_texture(SDL_Texture* tex){ texture = tex; }
+		SDL_Texture* get_texture() { return texture; }
     };
 }

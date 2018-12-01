@@ -37,9 +37,10 @@ project "PUKEngine"
     links
     {
       "../../cpp_libs/SDL2-devel-2.0.8-VC/SDL2/lib/x64/*.dll",
-      "../../cpp_libs/SDL2_image-devel-2.0.3-VC/SDL2_image/lib/x64/*.dll"
+      "../../cpp_libs/SDL2_image-devel-2.0.3-VC/SDL2_image/lib/x64/*.dll",
+      "../../cpp_libs/SDL2_image-devel-2.0.3-VC/SDL2_image/lib/x64/*.lib"
     }
-  
+
   filter "system:macosx"
     systemversion "latest"
     staticruntime "On"
@@ -82,22 +83,33 @@ project "Sandbox"
     "projects/%{prj.name}/src/**.cpp"
   }
 
-  includedirs
-  {
-    "vendor/spdlog/include",
-    "projects/PUKEngine/include"
-  }
-
-  links
-  {
-    "PUKEngine"
-  }
-
   cppdialect "C++17"
 
   filter "system:windows"
     systemversion "latest"
     staticruntime "On"
+
+    includedirs
+    {
+      "vendor/spdlog/include",
+      "projects/PUKEngine/include",
+      "../../cpp_libs/SDL2-devel-2.0.8-VC/SDL2/include",
+      "../../cpp_libs/SDL2_image-devel-2.0.3-VC/SDL2_image/include"
+    }
+
+
+    defines {"PUK_WIN"}
+
+    links
+    {
+      "../../cpp_libs/SDL2-devel-2.0.8-VC/SDL2/lib/x64/SDL2.lib",
+      "../../cpp_libs/SDL2-devel-2.0.8-VC/SDL2/lib/x64/SDL2main.lib",
+      "../../cpp_libs/SDL2_image-devel-2.0.3-VC/SDL2_image/lib/x64/*.lib",
+      "../../cpp_libs/SDL2-devel-2.0.8-VC/SDL2/lib/x64/*.dll",
+      "../../cpp_libs/SDL2_image-devel-2.0.3-VC/SDL2_image/lib/x64/*.dll",
+      "PUKEngine"
+    }
+
 
   filter "configurations:Debug"
     symbols "On"

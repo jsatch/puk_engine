@@ -44,8 +44,25 @@ namespace RenderSystem
             SDL_Quit();
         }
     }
+	void RenderSystem::init_sprite(ECS::Entity & entity)
+	{
+		assert(entity.has_component<ECS::SpriteComponent>());
+
+		ECS::SpriteComponent* sc = entity.get_component_by_type_id<ECS::SpriteComponent>();
+		SDL_Texture* tex = Util::TextureManager::load_texture(sc->get_filename(), renderer);
+		sc->set_texture(tex);
+	}
     void RenderSystem::draw(ECS::Entity& entity)
     {
-        
+		ECS::TransformComponent* tc = entity.get_component_by_type_id<ECS::TransformComponent>();
+		ECS::SpriteComponent* sc = entity.get_component_by_type_id<ECS::SpriteComponent>();
+		SDL_Rect destRect{};
+		destRect.x = static_cast<int>(tc->posX);
+		destRect.y = static_cast<int>(tc->posY);
+		destRect.w = sc->w;
+		destRect.h = sc->h;
+		SDL_RenderClear(renderer);
+		SDL_RenderCopy(renderer, sc->get_texture(), NULL, &destRect);
+		SDL_RenderPresent(renderer);
     }
 }

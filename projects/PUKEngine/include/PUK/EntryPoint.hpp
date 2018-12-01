@@ -7,4 +7,5 @@ int main(int argc, char** argv)
     auto app = PUK::create_application();
     app->run();
     delete app;
+	return 0;
 }

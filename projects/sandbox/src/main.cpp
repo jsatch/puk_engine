@@ -26,16 +26,16 @@ PUK::Application* PUK::create_application(){
     ECS::Entity e1;
 
 	ECS::TransformComponent comp{ 10.0f, 10.0f };
-	ECS::SpriteComponent comp2{ 100, 100 };
+	//ECS::SpriteComponent comp2{ 100, 100 };
 	//e1.get_component_by_type_id<ECS::TransformComponent>();
-	e1.add_component<ECS::SpriteComponent>(ECS::SpriteComponent(100, 100));
+	//e1.add_component<ECS::SpriteComponent>(ECS::SpriteComponent(100, 100));
 	e1.add_component<ECS::TransformComponent>(ECS::TransformComponent(10.0f, 10.0f));
 	
 	
-	ECS::RenderSystem renderSystem{};
+	/*ECS::RenderSystem renderSystem{};
 	renderSystem.register_component<ECS::SpriteComponent>();
-	renderSystem.register_component<ECS::TransformComponent>();
-	PUK_CLIENT_INFO("Entity 1 has match with RenderSystem: {}", renderSystem.has_match(e1));
+	renderSystem.register_component<ECS::TransformComponent>();*/
+	//PUK_CLIENT_INFO("Entity 1 has match with RenderSystem: {}", renderSystem.has_match(e1));
 
 
     return new SandBox();

@@ -11,6 +11,7 @@
 #include "ECS/Entity.hpp"
 #include "ECS/Component.hpp"
 #include "PUK/Log.hpp"
+#include "PUK/TextureManager.hpp" 
 
 namespace RenderSystem {
     using Window_SDL_Mode = Uint32;
@@ -30,6 +31,7 @@ namespace RenderSystem {
         RenderSystem(GameProperties& properties);
         ~RenderSystem();
         void init();
+		void init_sprite(ECS::Entity &);
         void draw(ECS::Entity &);
     };
 }

@@ -19,11 +19,4 @@ namespace ECS
 		}
         bool has_match(Entity& entity);
     };
-
-    class RenderSystem : public System
-    {   
-    public:
-		virtual void init() {};
-		virtual void draw() {};
-    };
 }

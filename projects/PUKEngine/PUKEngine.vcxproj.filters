@@ -28,9 +28,6 @@
     <Filter Include="src\Systems">
       <UniqueIdentifier>{34DEBD24-A093-361A-2988-30F1953C2D1E}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Worlds">
-      <UniqueIdentifier>{97A84738-8360-8985-EC67-62E1D83E2476}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\ECS\Component.hpp">
@@ -54,6 +51,9 @@
     <ClInclude Include="include\PUK\Log.hpp">
       <Filter>include\PUK</Filter>
     </ClInclude>
+    <ClInclude Include="include\PUK\TextureManager.hpp">
+      <Filter>include\PUK</Filter>
+    </ClInclude>
     <ClInclude Include="include\Systems\RenderSystem.hpp">
       <Filter>include\Systems</Filter>
     </ClInclude>
@@ -65,9 +65,6 @@
     <ClCompile Include="src\ECS\Component.cpp">
       <Filter>src\ECS</Filter>
     </ClCompile>
-    <ClCompile Include="src\ECS\Entity.cpp">
-      <Filter>src\ECS</Filter>
-    </ClCompile>
     <ClCompile Include="src\ECS\System.cpp">
       <Filter>src\ECS</Filter>
     </ClCompile>
@@ -77,11 +74,11 @@
     <ClCompile Include="src\PUK\Log.cpp">
       <Filter>src\PUK</Filter>
     </ClCompile>
+    <ClCompile Include="src\PUK\TextureManager.cpp">
+      <Filter>src\PUK</Filter>
+    </ClCompile>
     <ClCompile Include="src\Systems\RenderSystem.cpp">
       <Filter>src\Systems</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Worlds\WorldManager.cpp">
-      <Filter>src\Worlds</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -67,6 +67,9 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <Lib>
+      <AdditionalDependencies>..\..\..\..\cpp_libs\SDL2_image-devel-2.0.3-VC\SDL2_image\lib\x64\*.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -87,6 +90,9 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
+    <Lib>
+      <AdditionalDependencies>..\..\..\..\cpp_libs\SDL2_image-devel-2.0.3-VC\SDL2_image\lib\x64\*.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="include\ECS\Component.hpp" />
@@ -96,17 +102,17 @@
     <ClInclude Include="include\PUK\Application.hpp" />
     <ClInclude Include="include\PUK\EntryPoint.hpp" />
     <ClInclude Include="include\PUK\Log.hpp" />
+    <ClInclude Include="include\PUK\TextureManager.hpp" />
     <ClInclude Include="include\Systems\RenderSystem.hpp" />
     <ClInclude Include="include\Worlds\WorldManager.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ECS\Component.cpp" />
-    <ClCompile Include="src\ECS\Entity.cpp" />
     <ClCompile Include="src\ECS\System.cpp" />
     <ClCompile Include="src\PUK\Application.cpp" />
     <ClCompile Include="src\PUK\Log.cpp" />
+    <ClCompile Include="src\PUK\TextureManager.cpp" />
     <ClCompile Include="src\Systems\RenderSystem.cpp" />
-    <ClCompile Include="src\Worlds\WorldManager.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
