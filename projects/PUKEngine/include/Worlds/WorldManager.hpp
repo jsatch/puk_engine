@@ -8,41 +8,44 @@
 
 namespace Worlds
 {
-    /*using milisecs = unsigned int;
+    using milisecs = unsigned int;
     class World
     {
     private:
-        std::vector<std::shared_ptr<ECS::Entity>> entities;
+        std::vector<std::unique_ptr<ECS::Entity>> entities;
         std::vector<std::shared_ptr<ECS::System>> systems;
-        void add_system(ECS::System& system) const 
-        {
-            systems.push_back(std::make_shared<ECS::System>(system));
-        }
-        void add_entity(ECS::Entity& entity) const
-        {
-            entities.push_back(std::make_shared<ECS::Entity>(entity));
-        }
     public:
-        virtual void update(milisecs delta) = 0;
-        virtual void render() = 0;
+		void register_system(std::shared_ptr<ECS::System> system)
+		{
+			systems.push_back(system);
+		}
+		void add_entity(ECS::Entity* entity)
+		{
+			std::unique_ptr<ECS::Entity> uPtr{entity};
+			entities.push_back(std::move(uPtr));
+		}
+		virtual void update(milisecs delta) {};
+		virtual void render() {};
     };
 
     class WorldManager
     {
     private:
-        std::stack<std::shared_ptr<World>> worlds_stack;
+        std::stack<std::unique_ptr<World>> worlds_stack;
     public:
-        void push(World& world) const
+        void push(World* world)
         {
-            worlds_stack.push(std::make_shared<World>(world));
+			std::unique_ptr<World> uPtr{world};
+            worlds_stack.push(std::move(uPtr));
         }
-        void pop() const
+        void pop()
         {
             worlds_stack.pop();
         }
-        std::shared_ptr<World> top() const
+		template <typename T>
+        T* top()
         {
-            return worlds_stack.top()
+			return (T*)worlds_stack.top().get();
         }
-    };*/
+    };
 }

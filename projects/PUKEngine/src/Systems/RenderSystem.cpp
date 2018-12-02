@@ -1,8 +1,8 @@
 #include "Systems/RenderSystem.hpp"
 
-namespace RenderSystem
+namespace ECS
 {
-    RenderSystem::RenderSystem(GameProperties& properties)
+    RenderSystem::RenderSystem(GameProperties properties)
     {        
         this->properties = properties;
     }

@@ -1,4 +1,5 @@
 #include <memory>
+#include "Worlds/MenuWorld.hpp"
 #include "ECS/Component.hpp"
 #include "ECS/Entity.hpp"
 #include "ECS/System.hpp"
@@ -17,7 +18,7 @@ public:
 PUK::Application* PUK::create_application(){
     PUK_INIT();
 
-    ECS::ComponentTypeId id1 = ECS::get_component_type_id<ECS::TransformComponent>();
+    /*ECS::ComponentTypeId id1 = ECS::get_component_type_id<ECS::TransformComponent>();
     PUK_CLIENT_INFO("TransformComponent: {}", id1);
 
     ECS::ComponentTypeId id2 = ECS::get_component_type_id<ECS::SpriteComponent>();
@@ -37,8 +38,10 @@ PUK::Application* PUK::create_application(){
 	renderSystem.register_component<ECS::TransformComponent>();*/
 	//PUK_CLIENT_INFO("Entity 1 has match with RenderSystem: {}", renderSystem.has_match(e1));
 
+	PUK::Application* app = new SandBox();
+	app->set_initial_world(new Worlds::MenuWorld());
 
-    return new SandBox();
+    return app;
 }
 
 /*int main(int argc, char const *argv[])

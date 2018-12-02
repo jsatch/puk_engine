@@ -13,7 +13,7 @@
 #include "PUK/Log.hpp"
 #include "PUK/TextureManager.hpp" 
 
-namespace RenderSystem {
+namespace ECS {
     using Window_SDL_Mode = Uint32;
     struct GameProperties
     {
@@ -28,7 +28,7 @@ namespace RenderSystem {
         SDL_Window* win;
         SDL_Renderer* renderer;
     public:
-        RenderSystem(GameProperties& properties);
+        RenderSystem(GameProperties properties);
         ~RenderSystem();
         void init();
 		void init_sprite(ECS::Entity &);

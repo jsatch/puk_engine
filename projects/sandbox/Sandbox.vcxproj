@@ -100,6 +100,9 @@
       <Project>{4B192001-B783-D477-00C2-851D6C6BB2CC}</Project>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Worlds\MenuWorld.hpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
