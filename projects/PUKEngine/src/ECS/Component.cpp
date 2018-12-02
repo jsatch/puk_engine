@@ -25,5 +25,8 @@ ECS::SpriteComponent::SpriteComponent(int w, int h, std::string filename) : ECS:
 }
 ECS::SpriteComponent::~SpriteComponent()
 {
-	SDL_DestroyTexture(texture);
+	if (texture == nullptr)
+	{
+		SDL_DestroyTexture(texture);
+	}	
 }
