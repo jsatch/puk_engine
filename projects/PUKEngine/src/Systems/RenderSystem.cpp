@@ -14,7 +14,6 @@ namespace ECS
     }
     void RenderSystem::init()
     {
-        PUK_INIT();
         if( SDL_Init( SDL_INIT_VIDEO ) < 0 )
         {
             PUK_CORE_ERROR("Error SDL_Init: {}", SDL_GetError());
