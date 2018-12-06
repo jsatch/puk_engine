@@ -103,10 +103,12 @@
     <ClInclude Include="include\PUK\EntryPoint.hpp" />
     <ClInclude Include="include\PUK\Log.hpp" />
     <ClInclude Include="include\PUK\TextureManager.hpp" />
+    <ClInclude Include="include\Systems\EventSystem.hpp" />
     <ClInclude Include="include\Systems\RenderSystem.hpp" />
     <ClInclude Include="include\Worlds\WorldManager.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="include\Systems\EventSystem.cpp" />
     <ClCompile Include="src\ECS\Component.cpp" />
     <ClCompile Include="src\ECS\System.cpp" />
     <ClCompile Include="src\PUK\Application.cpp" />

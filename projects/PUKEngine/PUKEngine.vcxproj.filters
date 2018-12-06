@@ -60,6 +60,9 @@
     <ClInclude Include="include\Worlds\WorldManager.hpp">
       <Filter>include\Worlds</Filter>
     </ClInclude>
+    <ClInclude Include="include\Systems\EventSystem.hpp">
+      <Filter>include\Systems</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ECS\Component.cpp">
@@ -78,6 +81,9 @@
       <Filter>src\PUK</Filter>
     </ClCompile>
     <ClCompile Include="src\Systems\RenderSystem.cpp">
+      <Filter>src\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="include\Systems\EventSystem.cpp">
       <Filter>src\Systems</Filter>
     </ClCompile>
   </ItemGroup>
