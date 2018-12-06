@@ -18,5 +18,6 @@ namespace ECS
 			requires[get_component_type_id<T>()] = true;
 		}
         bool has_match(Entity& entity);
+		virtual void draw(ECS::Entity &) = 0;
     };
 }

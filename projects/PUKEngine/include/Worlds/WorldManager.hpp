@@ -5,6 +5,7 @@
 #include <stack>
 #include "ECS/Entity.hpp"
 #include "ECS/System.hpp"
+#include "PUK/Log.hpp"
 
 namespace Worlds
 {
@@ -19,13 +20,25 @@ namespace Worlds
 		{
 			systems.push_back(system);
 		}
-		void add_entity(ECS::Entity* entity)
+		void add_entity(ECS::Entity& entity)
 		{
-			std::unique_ptr<ECS::Entity> uPtr{entity};
-			entities.push_back(std::move(uPtr));
+			ECS::Entity* en = new ECS::Entity(std::move(entity));
+			entities.push_back(std::unique_ptr<ECS::Entity>(en));
 		}
 		virtual void update(milisecs delta) {};
-		virtual void render() {};
+		virtual void render() 
+		{
+			for (auto& sp_system: systems)
+			{
+				for (auto& up_entity : entities)
+				{
+					if ((*sp_system).has_match(*up_entity))
+					{
+						(*sp_system).draw(*up_entity);
+					}
+				}
+			}
+		};
     };
 
     class WorldManager

@@ -16,7 +16,7 @@ namespace PUK {
 
 
         while(true) {
-            //std::cout << "Corriendo..." << std::endl;
+
 			//world_manager->top<Worlds::World>()->update();
 			world_manager->top<Worlds::World>()->render();
 

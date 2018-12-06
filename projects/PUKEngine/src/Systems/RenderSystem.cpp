@@ -43,7 +43,7 @@ namespace ECS
             SDL_Quit();
         }
     }
-	void RenderSystem::init_sprite(ECS::Entity & entity)
+	void RenderSystem::loading_sprite(ECS::Entity & entity)
 	{
 		assert(entity.has_component<ECS::SpriteComponent>());
 

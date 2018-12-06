@@ -31,7 +31,7 @@ namespace ECS {
         RenderSystem(GameProperties properties);
         ~RenderSystem();
         void init();
-		void init_sprite(ECS::Entity &);
-        void draw(ECS::Entity &);
+		void loading_sprite(ECS::Entity &);
+        void draw(ECS::Entity &) override;
     };
 }
