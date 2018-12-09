@@ -5,21 +5,22 @@
 namespace PUK {
     Application::Application()
     {
-		world_manager = new Worlds::WorldManager();
+		world_manager = std::make_shared<Worlds::WorldManager>();
 	}
     Application::~Application()
-    {
-		if (world_manager != nullptr) { delete world_manager; }
-	}
+    {}
     void Application::run() 
     {
-
-
-        while(true) {
-
+		running = true;
+        while(running) 
+		{
+			(*world_manager).top<Worlds::World>()->handle_input();
 			//world_manager->top<Worlds::World>()->update();
-			world_manager->top<Worlds::World>()->render();
-
+			(*world_manager).top<Worlds::World>()->render();
         }
     }
+	void Application::stop()
+	{
+		running = false;
+	}
 }

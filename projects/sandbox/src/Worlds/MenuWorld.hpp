@@ -3,15 +3,36 @@
 #include <memory>
 #include "Worlds/WorldManager.hpp"
 #include "Systems/RenderSystem.hpp"
+#include "Systems/EventSystem.hpp"
 #include "PUK/Log.hpp"
 
 namespace Worlds
 {
 	struct MenuWorld : public World
 	{
+	private:
+		std::unique_ptr<Systems::EventSystem> event_system;
 	public:
-		MenuWorld()
+		MenuWorld(std::unique_ptr<Systems::EventSystem>&& es)
 		{
+			event_system = std::move(es); // forcing a move semantic
+			
+			(*event_system).add_listener(Systems::on_key_pressed, [&](Systems::EventData data) -> void {
+				PUK_CLIENT_INFO("on_key_presed");
+				int code = data.get_value<int>();
+				if (code == SDLK_ESCAPE)
+				{
+					PUK_CLIENT_INFO("Quiting app...");
+					(*get_application()).stop();
+				}
+				
+			});
+			
+			(*event_system).add_listener(Systems::on_exit, [&](Systems::EventData data) -> void {
+				PUK_CLIENT_INFO("Quiting app...");
+				(*get_application()).stop();
+			});
+			
 			// Creating the RenderSystem
 			ECS::GameProperties gp{ "Sandbox", SDL_WINDOW_SHOWN, 800, 600};
 			std::shared_ptr<ECS::RenderSystem> render_system = std::make_shared<ECS::RenderSystem>(gp);
@@ -41,5 +62,10 @@ namespace Worlds
 		{}
 		virtual void update(milisecs delta) override
 		{}
+
+		virtual void handle_input() override
+		{
+			(*event_system).handle_input();
+		}
 	};
 }
