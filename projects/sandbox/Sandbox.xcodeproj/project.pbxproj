@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E1B67737A1779A275C3EB8EBE661F142FAC5AEA008D57E2 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4526DD8DC23E91AA1EF440AAE40A3EDC8ABF9B5020BF67EA /* SDL2.framework */; };
 		4244907FA2554A833FD630C1848C7DA6258B8F045AEEAE8 /* libPUKEngine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90A5FAF6D7295550D5B827C9F9AD5842609398E0D5EEE390 /* libPUKEngine.a */; };
 		C54C38DBB68AC1CC334AB5E30D182C3EEC99B774E591400C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 956E2449E21F52346CEFA940E59024665BE2FBB166FCC874 /* main.cpp */; };
+		E448B6D3DE367DA6758F3A3FA0F6DE18E5606DAFE2BBBE6 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C8E5A1F8462E96E7BA751CF68A9F1A099F6B90EC971FAE /* SDL2_image.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,9 +31,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C8E5A1F8462E96E7BA751CF68A9F1A099F6B90EC971FAE /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = System/Library/Frameworks/SDL2_image.framework; sourceTree = SDKROOT; };
 		3A59FDDAF8CF3E9821DDC1179D21DC4A5E802E7AAF5A24D8 /* Sandbox */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = Sandbox; path = Sandbox; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BFAE1FDA6176435676EEB5D24959F5ED4D276709A51C83 /* libPUKEngine.a */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "PUKEngine.xcodeproj"; path = ../PUKEngine/PUKEngine.xcodeproj; sourceTree = SOURCE_ROOT; };
+		4526DD8DC23E91AA1EF440AAE40A3EDC8ABF9B5020BF67EA /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = System/Library/Frameworks/SDL2.framework; sourceTree = SDKROOT; };
 		956E2449E21F52346CEFA940E59024665BE2FBB166FCC874 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = ../Sandbox/src/main.cpp; sourceTree = "<group>"; };
+		D2DDDC85735EBBD87758F1A6D20784AFBD9F4FAA71F7A18 /* MenuWorld.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; name = MenuWorld.hpp; path = ../Sandbox/src/Worlds/MenuWorld.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +44,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E1B67737A1779A275C3EB8EBE661F142FAC5AEA008D57E2 /* SDL2.framework in Frameworks */,
+				E448B6D3DE367DA6758F3A3FA0F6DE18E5606DAFE2BBBE6 /* SDL2_image.framework in Frameworks */,
 				4244907FA2554A833FD630C1848C7DA6258B8F045AEEAE8 /* libPUKEngine.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -46,10 +53,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A1E6F4C8BD337E170FCDFB6C08BCB06DA04AAC86D989BE /* Worlds */ = {
+			isa = PBXGroup;
+			children = (
+				D2DDDC85735EBBD87758F1A6D20784AFBD9F4FAA71F7A18 /* MenuWorld.hpp */,
+			);
+			name = Worlds;
+			sourceTree = "<group>";
+		};
+		49755AD7BBF7678180163982A7E87333BFF7C341FA200DC1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4526DD8DC23E91AA1EF440AAE40A3EDC8ABF9B5020BF67EA /* SDL2.framework */,
+				2C8E5A1F8462E96E7BA751CF68A9F1A099F6B90EC971FAE /* SDL2_image.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6BA25BEC6849586F1BA17E95FB54B1613BFEBA1D4389A6AF /* Sandbox */ = {
 			isa = PBXGroup;
 			children = (
+				2A1E6F4C8BD337E170FCDFB6C08BCB06DA04AAC86D989BE /* Worlds */,
 				956E2449E21F52346CEFA940E59024665BE2FBB166FCC874 /* main.cpp */,
+				49755AD7BBF7678180163982A7E87333BFF7C341FA200DC1 /* Frameworks */,
 				DE2FD571A6C936B48E134D4D9B3FADE6BA17F9BDEA134CF4 /* Products */,
 				DE2FDC7F9D968EAA8E13545B920D05DCBA1800CBE0E0A4EA /* Projects */,
 			);
@@ -176,8 +202,14 @@
 				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
 				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					/Library/Frameworks,
+				);
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					PUK_OSX,
+				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -198,7 +230,13 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "c++1z";
 				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
 				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					/Library/Frameworks,
+				);
 				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					PUK_OSX,
+				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;

@@ -9,16 +9,18 @@
 /* Begin PBXBuildFile section */
 		25F57EFAC1C1B709C5DF8977192729FB3EF71FEFCB354549 /* Component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC37DCEFB1541CB1A3C5E223E34D676324B7040B5D2CA2F1 /* Component.cpp */; };
 		2E1B67737A1779A275C3EB8EBE661F142FAC5AEA008D57E2 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4526DD8DC23E91AA1EF440AAE40A3EDC8ABF9B5020BF67EA /* SDL2.framework */; };
-		311944F86BA94FD4ABA186ACB093A6F4A287C60D30733D /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9904780E856FB06572D1DB2BA73B5D97DE9D35D0E3F086A5 /* Entity.cpp */; };
 		5FA4BABD0AC525AA6E12BFD2FEC46F1C705AF89183AF83EA /* RenderSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 489509E1F9176212E5C063E93D2B334481CAC97830FCB852 /* RenderSystem.cpp */; };
 		64204FE1C36B13A0A6C965DD6554AF9276440E5E5C7BC1E0 /* Application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2492CEEF7BAD3228614BD67349D085DA58423136D0DED868 /* Application.cpp */; };
 		80B5918A88B3ABBC59BC0E0FB997A3AE675BC3DECCAFD9FC /* Log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C132EF2CC33E4A84C340ECC8E9647A36D84F16BC506B70C4 /* Log.cpp */; };
-		D41D0A048EF309896FB3C45A8E95ECBBAEC4231C8EA9FC9 /* WorldManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 82BFEA40EC4E073122A9F4BD43B37A239BC18B35F5C19571 /* WorldManager.cpp */; };
+		C79DEBB55CB4FBAEC492F91CD10F40A0AA3F5A044EF2C9EE /* EventSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B2ABCF7290B08D6946060313B34E58880C5F0636F25CF16 /* EventSystem.cpp */; };
+		DCABF7519065F670EB19FC6784653FE2ED623526095054B0 /* TextureManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9BAE44281CC754F838D99E2F60DB262AD4E403BE54ACAB38 /* TextureManager.cpp */; };
 		E448B6D3DE367DA6758F3A3FA0F6DE18E5606DAFE2BBBE6 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C8E5A1F8462E96E7BA751CF68A9F1A099F6B90EC971FAE /* SDL2_image.framework */; };
 		EDDE5CD01F6B598D3586E0EB63B9FEFFEF6F5046A5E137CD /* System.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7CC9949CF5F493F55696F7BA17C04127C262525F54756A35 /* System.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1426C917A9E3A1C96AC657A12EB1FCE5EE66A954132205C /* EventSystem.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; name = EventSystem.hpp; path = include/Systems/EventSystem.hpp; sourceTree = "<group>"; };
+		1B2ABCF7290B08D6946060313B34E58880C5F0636F25CF16 /* EventSystem.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = EventSystem.cpp; path = src/Systems/EventSystem.cpp; sourceTree = "<group>"; };
 		2492CEEF7BAD3228614BD67349D085DA58423136D0DED868 /* Application.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Application.cpp; path = src/PUK/Application.cpp; sourceTree = "<group>"; };
 		2C8E5A1F8462E96E7BA751CF68A9F1A099F6B90EC971FAE /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = System/Library/Frameworks/SDL2_image.framework; sourceTree = SDKROOT; };
 		30544D88E698FE4732624B250CBF2DF94770751873C62487 /* PUK.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; name = PUK.hpp; path = include/PUK.hpp; sourceTree = "<group>"; };
@@ -28,9 +30,9 @@
 		765350F1C27F2789F310A7EFB450CAA5E00C31ED74E68B8 /* RenderSystem.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; name = RenderSystem.hpp; path = include/Systems/RenderSystem.hpp; sourceTree = "<group>"; };
 		7CC9949CF5F493F55696F7BA17C04127C262525F54756A35 /* System.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = System.cpp; path = src/ECS/System.cpp; sourceTree = "<group>"; };
 		7F84FF991856A677C22E1594BA40426991A8BE15B16754B7 /* WorldManager.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; name = WorldManager.hpp; path = include/Worlds/WorldManager.hpp; sourceTree = "<group>"; };
-		82BFEA40EC4E073122A9F4BD43B37A239BC18B35F5C19571 /* WorldManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = WorldManager.cpp; path = src/Worlds/WorldManager.cpp; sourceTree = "<group>"; };
-		9904780E856FB06572D1DB2BA73B5D97DE9D35D0E3F086A5 /* Entity.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Entity.cpp; path = src/ECS/Entity.cpp; sourceTree = "<group>"; };
+		9BAE44281CC754F838D99E2F60DB262AD4E403BE54ACAB38 /* TextureManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = TextureManager.cpp; path = src/PUK/TextureManager.cpp; sourceTree = "<group>"; };
 		C132EF2CC33E4A84C340ECC8E9647A36D84F16BC506B70C4 /* Log.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Log.cpp; path = src/PUK/Log.cpp; sourceTree = "<group>"; };
+		C45C9E49261E249E5C2873B9053B3ED01AF82C58E1449ADE /* TextureManager.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; name = TextureManager.hpp; path = include/PUK/TextureManager.hpp; sourceTree = "<group>"; };
 		C4DB1B3538DF973719422B90702EAE9F88A7D7C8E113D77 /* Component.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; name = Component.hpp; path = include/ECS/Component.hpp; sourceTree = "<group>"; };
 		CD5A524C117E2F8BC7305F775EE125BD88C6CF28D50025CB /* Entity.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; name = Entity.hpp; path = include/ECS/Entity.hpp; sourceTree = "<group>"; };
 		DC37DCEFB1541CB1A3C5E223E34D676324B7040B5D2CA2F1 /* Component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Component.cpp; path = src/ECS/Component.cpp; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				2492CEEF7BAD3228614BD67349D085DA58423136D0DED868 /* Application.cpp */,
 				C132EF2CC33E4A84C340ECC8E9647A36D84F16BC506B70C4 /* Log.cpp */,
+				9BAE44281CC754F838D99E2F60DB262AD4E403BE54ACAB38 /* TextureManager.cpp */,
 			);
 			name = PUK;
 			sourceTree = "<group>";
@@ -84,6 +87,7 @@
 		65600FDA85AE340F2356AEA0289C5AC19C685F36B7C23A4F /* Systems */ = {
 			isa = PBXGroup;
 			children = (
+				1B2ABCF7290B08D6946060313B34E58880C5F0636F25CF16 /* EventSystem.cpp */,
 				489509E1F9176212E5C063E93D2B334481CAC97830FCB852 /* RenderSystem.cpp */,
 			);
 			name = Systems;
@@ -101,21 +105,12 @@
 			name = include;
 			sourceTree = "<group>";
 		};
-		8388DEA417E8DB355B0A639B1B59AD6749FDB60B9CC65175 /* Worlds */ = {
-			isa = PBXGroup;
-			children = (
-				82BFEA40EC4E073122A9F4BD43B37A239BC18B35F5C19571 /* WorldManager.cpp */,
-			);
-			name = Worlds;
-			sourceTree = "<group>";
-		};
 		8E1F9F995775D418C4C07E444366DFCA4A20803959E7A58 /* src */ = {
 			isa = PBXGroup;
 			children = (
 				9786D2247FA15735DB7BA356CFB4EBE7E07FC45D52331D75 /* ECS */,
 				359A5E0E246A373F798F2F40747DCBF17E935046F6FBFD7F /* PUK */,
 				65600FDA85AE340F2356AEA0289C5AC19C685F36B7C23A4F /* Systems */,
-				8388DEA417E8DB355B0A639B1B59AD6749FDB60B9CC65175 /* Worlds */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -135,7 +130,6 @@
 			isa = PBXGroup;
 			children = (
 				DC37DCEFB1541CB1A3C5E223E34D676324B7040B5D2CA2F1 /* Component.cpp */,
-				9904780E856FB06572D1DB2BA73B5D97DE9D35D0E3F086A5 /* Entity.cpp */,
 				7CC9949CF5F493F55696F7BA17C04127C262525F54756A35 /* System.cpp */,
 			);
 			name = ECS;
@@ -144,6 +138,7 @@
 		9986DB87672643EB9B94D9238D4C739DB0A30316F4536A2B /* Systems */ = {
 			isa = PBXGroup;
 			children = (
+				1426C917A9E3A1C96AC657A12EB1FCE5EE66A954132205C /* EventSystem.hpp */,
 				765350F1C27F2789F310A7EFB450CAA5E00C31ED74E68B8 /* RenderSystem.hpp */,
 			);
 			name = Systems;
@@ -155,6 +150,7 @@
 				DC8F80D4BBB7796E55C5240ECDE15620422AB44101D23FAE /* Application.hpp */,
 				3A3B71FECBC97EFE895469AEB0108730174C837033FDB53E /* EntryPoint.hpp */,
 				E14F046ADD8E17CAF1D225D05C8D07CF24C5629ED645E0A /* Log.hpp */,
+				C45C9E49261E249E5C2873B9053B3ED01AF82C58E1449ADE /* TextureManager.hpp */,
 			);
 			name = PUK;
 			sourceTree = "<group>";
@@ -228,12 +224,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				25F57EFAC1C1B709C5DF8977192729FB3EF71FEFCB354549 /* Component.cpp in Sources */,
-				311944F86BA94FD4ABA186ACB093A6F4A287C60D30733D /* Entity.cpp in Sources */,
 				EDDE5CD01F6B598D3586E0EB63B9FEFFEF6F5046A5E137CD /* System.cpp in Sources */,
 				64204FE1C36B13A0A6C965DD6554AF9276440E5E5C7BC1E0 /* Application.cpp in Sources */,
 				80B5918A88B3ABBC59BC0E0FB997A3AE675BC3DECCAFD9FC /* Log.cpp in Sources */,
+				DCABF7519065F670EB19FC6784653FE2ED623526095054B0 /* TextureManager.cpp in Sources */,
+				C79DEBB55CB4FBAEC492F91CD10F40A0AA3F5A044EF2C9EE /* EventSystem.cpp in Sources */,
 				5FA4BABD0AC525AA6E12BFD2FEC46F1C705AF89183AF83EA /* RenderSystem.cpp in Sources */,
-				D41D0A048EF309896FB3C45A8E95ECBBAEC4231C8EA9FC9 /* WorldManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

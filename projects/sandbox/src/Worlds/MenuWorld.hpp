@@ -17,9 +17,10 @@ namespace Worlds
 		{
 			event_system = std::move(es); // forcing a move semantic
 			
-			(*event_system).add_listener(Systems::on_key_pressed, [&](Systems::EventData data) -> void {
+			(*event_system).add_listener(Systems::on_key_pressed, [&](Systems::EventData* data) -> void {
 				PUK_CLIENT_INFO("on_key_presed");
-				int code = data.get_value<int>();
+                Systems::OnClickEventData* onclick_data = (Systems::OnClickEventData*)data;
+                Systems::KeyCode code = onclick_data->get_key_code();
 				if (code == SDLK_ESCAPE)
 				{
 					PUK_CLIENT_INFO("Quiting app...");
@@ -28,7 +29,7 @@ namespace Worlds
 				
 			});
 			
-			(*event_system).add_listener(Systems::on_exit, [&](Systems::EventData data) -> void {
+			(*event_system).add_listener(Systems::on_exit, [&](Systems::EventData* data) -> void {
 				PUK_CLIENT_INFO("Quiting app...");
 				(*get_application()).stop();
 			});

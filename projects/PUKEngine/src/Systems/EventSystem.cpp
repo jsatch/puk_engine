@@ -12,14 +12,15 @@ namespace Systems
 			case SDL_KEYDOWN:
 				if (listeners[on_key_pressed] != nullptr)
 				{
-					EventData ed{(void*)event.key.keysym.sym};
+					OnClickEventData* ed = new OnClickEventData(event.key.keysym.sym);
 					listeners[on_key_pressed](ed);
+                    delete ed;
 				}
 			break;
 			case SDL_QUIT:
 				if (listeners[on_exit] != nullptr)
 				{
-					listeners[on_exit](NULL);
+					listeners[on_exit](nullptr);
 				}
 			break;
 			}

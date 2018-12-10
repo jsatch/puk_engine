@@ -79,11 +79,37 @@ project "Sandbox"
 
   files
   {
-    "projects/%{prj.name}/include/**.hpp",
+    "projects/%{prj.name}/src/**.hpp",
     "projects/%{prj.name}/src/**.cpp"
   }
 
   cppdialect "C++17"
+
+  filter "system:macosx"
+
+    systemversion "latest"
+    staticruntime "On"
+
+    defines {"PUK_OSX"}
+
+    includedirs
+    {
+      "vendor/spdlog/include",
+      "projects/PUKEngine/include"
+    }
+
+    frameworkdirs
+    {
+      "/Library/Frameworks/"
+    }
+
+    links
+    {
+      "SDL2.framework",
+      "SDL2_image.framework",
+      "PUKEngine"
+    }
+
 
   filter "system:windows"
     systemversion "latest"

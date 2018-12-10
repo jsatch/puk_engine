@@ -15,21 +15,27 @@ namespace Systems
 {
 	enum EventType { on_click, on_key_pressed, on_exit};
 
+    
+    using KeyCode = uint32_t;
+    
 	struct EventData
-	{
-	private:
-		void*  data;
-	public:
-		EventData(void* data)
-		{
-			this->data = data;
-		}
-		template <typename T>
-		T get_value()
-		{
-			return (T)data;
-		}
-	};
+	{};
+    
+    struct OnClickEventData : public EventData
+    {
+    private:
+        KeyCode data;
+    public:
+        OnClickEventData(KeyCode data)
+        {
+            this->data = data;
+        }
+        
+        KeyCode get_key_code()
+        {
+            return data;
+        }
+    };
 
 	constexpr int MAX_EVENTS = 3;
 
@@ -37,17 +43,23 @@ namespace Systems
 	class EventSystem
 	{
 	protected:
-		std::array<std::function<void(EventData)>, MAX_EVENTS > listeners;
+		std::array<std::function<void(EventData*)>, MAX_EVENTS > listeners;
 
 	public:
-		void add_listener(EventType type, std::function<void(EventData)>&& f)
+        EventSystem(){}
+        virtual ~EventSystem(){}
+		void add_listener(EventType type, std::function<void(EventData*)>&& f)
 		{
 			listeners[type] = f;
 		}
 		virtual void handle_input() = 0;
 	};
+    
 	class SDLEventSystem : public EventSystem
-	{
+    {
+    public:
+        SDLEventSystem(){}
+        ~SDLEventSystem(){}
 		virtual void handle_input() override;
 	};
 }

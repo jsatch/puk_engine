@@ -1,5 +1,3 @@
-#pragma once
-
 #include "PUK/Application.hpp"
 
 namespace PUK {

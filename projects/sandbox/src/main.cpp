@@ -5,6 +5,7 @@
 #include "PUK/Log.hpp"
 #include "PUK.hpp"
 #include "Worlds/MenuWorld.hpp"
+#include "Systems/EventSystem.hpp"
 
 class SandBox : public PUK::Application
 {
