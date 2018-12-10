@@ -10,10 +10,12 @@
 
 #include <array>
 #include <functional>
+#include "ECS/System.hpp"
+#include "Components/InputMapComponent.hpp"
 
 namespace Systems
 {
-	enum EventType { on_click, on_key_pressed, on_exit};
+	extern enum EventType { on_click, on_key_pressed, on_exit};
 
     
     using KeyCode = uint32_t;
@@ -37,21 +39,21 @@ namespace Systems
         }
     };
 
-	constexpr int MAX_EVENTS = 3;
+	extern constexpr int MAX_EVENTS = 3;
 
-	// TODO: It should inherit from ECS::System
-	class EventSystem
+    class EventSystem : ECS::System
 	{
 	protected:
-		std::array<std::function<void(EventData*)>, MAX_EVENTS > listeners;
+		std::array<std::function<void(EventData*)>, MAX_EVENTS > global_listeners;
 
 	public:
         EventSystem(){}
         virtual ~EventSystem(){}
 		void add_listener(EventType type, std::function<void(EventData*)>&& f)
 		{
-			listeners[type] = f;
+			global_listeners[type] = f;
 		}
+        virtual void draw(ECS::Entity &) override;
 		virtual void handle_input() = 0;
 	};
     
