@@ -12,7 +12,7 @@ namespace Systems
 			case SDL_KEYDOWN:
 				if (listeners[on_key_pressed] != nullptr)
 				{
-					OnClickEventData* ed = new OnClickEventData(event.key.keysym.sym);
+					OnKeyPressedEventData* ed = new OnKeyPressedEventData(event.key.keysym.sym);
 					listeners[on_key_pressed](ed);
                     delete ed;
 				}

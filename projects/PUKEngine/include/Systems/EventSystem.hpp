@@ -21,12 +21,12 @@ namespace Systems
 	struct EventData
 	{};
     
-    struct OnClickEventData : public EventData
+    struct OnKeyPressedEventData : public EventData
     {
     private:
         KeyCode data;
     public:
-        OnClickEventData(KeyCode data)
+        OnKeyPressedEventData(KeyCode data)
         {
             this->data = data;
         }

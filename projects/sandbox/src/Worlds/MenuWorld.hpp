@@ -19,8 +19,9 @@ namespace Worlds
 			
 			(*event_system).add_listener(Systems::on_key_pressed, [&](Systems::EventData* data) -> void {
 				PUK_CLIENT_INFO("on_key_presed");
-                Systems::OnClickEventData* onclick_data = (Systems::OnClickEventData*)data;
-                Systems::KeyCode code = onclick_data->get_key_code();
+                auto onclick_data = (Systems::OnKeyPressedEventData*)data;
+                auto code = onclick_data->get_key_code();
+                
 				if (code == SDLK_ESCAPE)
 				{
 					PUK_CLIENT_INFO("Quiting app...");
