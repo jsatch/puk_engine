@@ -95,6 +95,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="include\Components\InputMapComponent.hpp" />
     <ClInclude Include="include\ECS\Component.hpp" />
     <ClInclude Include="include\ECS\Entity.hpp" />
     <ClInclude Include="include\ECS\System.hpp" />
@@ -108,12 +109,12 @@
     <ClInclude Include="include\Worlds\WorldManager.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="include\Systems\EventSystem.cpp" />
     <ClCompile Include="src\ECS\Component.cpp" />
     <ClCompile Include="src\ECS\System.cpp" />
     <ClCompile Include="src\PUK\Application.cpp" />
     <ClCompile Include="src\PUK\Log.cpp" />
     <ClCompile Include="src\PUK\TextureManager.cpp" />
+    <ClCompile Include="src\Systems\EventSystem.cpp" />
     <ClCompile Include="src\Systems\RenderSystem.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

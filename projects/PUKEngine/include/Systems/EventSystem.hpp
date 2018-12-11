@@ -13,9 +13,14 @@
 #include "ECS/System.hpp"
 #include "Components/InputMapComponent.hpp"
 
+namespace Components
+{
+	struct InputMapComponent;
+}
+
 namespace Systems
 {
-	extern enum EventType { on_click, on_key_pressed, on_exit};
+	enum EventType { on_click, on_key_pressed, on_exit};
 
     
     using KeyCode = uint32_t;
@@ -39,7 +44,7 @@ namespace Systems
         }
     };
 
-	extern constexpr int MAX_EVENTS = 3;
+	constexpr int MAX_EVENTS = 3;
 
     class EventSystem : ECS::System
 	{
