@@ -4,6 +4,7 @@
 #include "Worlds/WorldManager.hpp"
 #include "Systems/RenderSystem.hpp"
 #include "Systems/EventSystem.hpp"
+#include "Components/InputMapComponent.hpp"
 #include "PUK/Log.hpp"
 
 namespace Worlds
@@ -11,7 +12,8 @@ namespace Worlds
 	struct MenuWorld : public World
 	{
 	private:
-		std::unique_ptr<Systems::EventSystem> event_system;
+		std::shared_ptr<Systems::EventSystem> event_system;
+		std::shared_ptr<ECS::Entity> scott_entity;
 	public:
 		MenuWorld(std::unique_ptr<Systems::EventSystem>&& es)
 		{
@@ -40,22 +42,51 @@ namespace Worlds
 			std::shared_ptr<ECS::RenderSystem> render_system = std::make_shared<ECS::RenderSystem>(gp);
 
 			// Creating entities and adding components
-			ECS::Entity scott_entity{};
-			scott_entity.add_component<ECS::SpriteComponent>({ 309 , 60,"assets/scott_standing.png" });
-			scott_entity.add_component<ECS::TransformComponent>({ 10.0f, 30.0f });
+			scott_entity = std::make_shared<ECS::Entity>();
+			(*scott_entity).add_component<ECS::SpriteComponent>({ 309 , 60,"assets/scott_standing.png" });
+			(*scott_entity).add_component<ECS::TransformComponent>({ 10.0f, 30.0f });
+			(*scott_entity).add_component<Components::InputMapComponent>({});
 
-			// Registering components for this system
+			// Adding input handlers to the entity
+			Components::InputHandlerComponent handlers_component{};
+			handlers_component.addHandler(Components::InputControls::LEFT_KEY, [&]() -> void {
+				auto tc = (*scott_entity).get_component_by_type_id<ECS::TransformComponent>();
+				(*tc).posX -= 10;
+			});
+			handlers_component.addHandler(Components::InputControls::RIGHT_KEY, [&]() -> void {
+				auto tc = (*scott_entity).get_component_by_type_id<ECS::TransformComponent>();
+				(*tc).posX += 10;
+			});
+			handlers_component.addHandler(Components::InputControls::UP_KEY, [&]() -> void {
+				auto tc = (*scott_entity).get_component_by_type_id<ECS::TransformComponent>();
+				(*tc).posY -= 10;
+			});
+			handlers_component.addHandler(Components::InputControls::DOWN_KEY, [&]() -> void {
+				auto tc = (*scott_entity).get_component_by_type_id<ECS::TransformComponent>();
+				(*tc).posY += 10;
+			});
+			(*scott_entity).add_component<Components::InputHandlerComponent>(std::move(handlers_component));
+
+			// Registering components for the render system
 			(*render_system).register_component<ECS::SpriteComponent>();
 			(*render_system).register_component<ECS::TransformComponent>();
+
+			// Registering components for the event system
+			(*event_system).register_component<Components::InputMapComponent>();
 
 			// Initializing system
 			(*render_system).init();
 
 			// Loading sprite
-			(*render_system).loading_sprite(scott_entity);
+			(*render_system).loading_sprite(*scott_entity);
+
+			
 
 			// Registering the systems and the entities to the world
 			register_system(render_system);
+			register_system(event_system);
+
+			// Adding entity to the world
 			add_entity(scott_entity);
 			
 			PUK_CLIENT_INFO("Se creo MenuWorld");

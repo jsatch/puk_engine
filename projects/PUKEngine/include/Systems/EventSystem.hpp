@@ -45,12 +45,13 @@ namespace Systems
     };
 
 	constexpr int MAX_EVENTS = 3;
+	constexpr int MAX_INPUT_CONTROLS = (int)Components::InputControls::_COUNT;
 
-    class EventSystem : ECS::System
+    class EventSystem : public ECS::System
 	{
 	protected:
 		std::array<std::function<void(EventData*)>, MAX_EVENTS > global_listeners;
-
+		std::bitset<MAX_INPUT_CONTROLS> map_input_controls;
 	public:
         EventSystem(){}
         virtual ~EventSystem(){}

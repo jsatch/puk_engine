@@ -6,10 +6,10 @@ namespace ECS
 		bool found = false;
 		for (int i=0 ; i < MAX_COMPONENTS; i++)
 		{
-			if (requires[i] == true) found = true;
-			if (requires[i] != entity.has_component(i) ) {
-				found = false;
-				break;
+			if (requires[i] == true)
+			{
+				found = entity.has_component(i);
+				if (found == false) break;
 			}
 		}
 		return found;

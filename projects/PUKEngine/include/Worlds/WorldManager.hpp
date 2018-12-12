@@ -19,7 +19,7 @@ namespace Worlds
     class World
     {
     protected:
-        std::vector<std::unique_ptr<ECS::Entity>> entities;
+        std::vector<std::shared_ptr<ECS::Entity>> entities;
         std::vector<std::shared_ptr<ECS::System>> systems;
 		std::shared_ptr<PUK::Application> app;
     public:
@@ -42,11 +42,16 @@ namespace Worlds
 			systems.push_back(system);
 		}
 
-		void add_entity(ECS::Entity& entity)
+		void add_entity(std::shared_ptr<ECS::Entity> &entity)
+		{
+			entities.push_back(entity);
+		}
+
+		/*void add_entity(ECS::Entity& entity)
 		{
 			ECS::Entity* en = new ECS::Entity(std::move(entity));
 			entities.push_back(std::unique_ptr<ECS::Entity>(en));
-		}
+		}*/
 
 		virtual void handle_input() = 0;
 		virtual void update(milisecs delta) {};
