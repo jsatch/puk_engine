@@ -33,6 +33,10 @@ namespace Components {
 		{
 			map |= map_controls;
 		}
+		InputBitSet& get_map()
+		{
+			return map;
+		}
 		void reset()
 		{
 			map.reset();

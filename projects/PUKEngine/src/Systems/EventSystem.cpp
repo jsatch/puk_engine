@@ -23,7 +23,7 @@ namespace Systems
     
 	void SDLEventSystem::handle_input()
 	{
-		map_input_controls.reset();
+		//map_input_controls.reset();
 
 		SDL_Event event;
 		while (SDL_PollEvent(&event))
@@ -40,20 +40,70 @@ namespace Systems
 				switch (event.key.keysym.sym)
 				{
 					case SDLK_UP:
-						map_input_controls[(int)Components::InputControls::UP_KEY].flip();
+						if (map_input_controls[(int)Components::InputControls::UP_KEY] == false)
+						{
+							map_input_controls[(int)Components::InputControls::UP_KEY] = true;
+						}
 						break;
 					case SDLK_DOWN:
-						map_input_controls[(int)Components::InputControls::DOWN_KEY].flip();
+						if (map_input_controls[(int)Components::InputControls::DOWN_KEY] == false)
+						{
+							map_input_controls[(int)Components::InputControls::DOWN_KEY] = true;
+						}
 						break;
 					case SDLK_LEFT:
-						map_input_controls[(int)Components::InputControls::LEFT_KEY].flip();
+						if (map_input_controls[(int)Components::InputControls::LEFT_KEY] == false)
+						{
+							map_input_controls[(int)Components::InputControls::LEFT_KEY] = true;
+						}
 						break;
 					case SDLK_RIGHT:
-						map_input_controls[(int)Components::InputControls::RIGHT_KEY].flip();
+						if (map_input_controls[(int)Components::InputControls::RIGHT_KEY] == false)
+						{
+							map_input_controls[(int)Components::InputControls::RIGHT_KEY] = true;
+						}
 						break;
 					case SDLK_SPACE:
-						map_input_controls[(int)Components::InputControls::SPACE_KEY].flip();
+						if (map_input_controls[(int)Components::InputControls::SPACE_KEY] == false)
+						{
+							map_input_controls[(int)Components::InputControls::SPACE_KEY] = true;
+						}
 						break;
+				}
+			break;
+			case SDL_KEYUP:
+				switch (event.key.keysym.sym)
+				{
+				case SDLK_UP:
+					if (map_input_controls[(int)Components::InputControls::UP_KEY] == true)
+					{
+						map_input_controls[(int)Components::InputControls::UP_KEY] = false;
+					}
+					break;
+				case SDLK_DOWN:
+					if (map_input_controls[(int)Components::InputControls::DOWN_KEY] == true)
+					{
+						map_input_controls[(int)Components::InputControls::DOWN_KEY] = false;
+					}
+					break;
+				case SDLK_LEFT:
+					if (map_input_controls[(int)Components::InputControls::LEFT_KEY] == true)
+					{
+						map_input_controls[(int)Components::InputControls::LEFT_KEY] = false;
+					}
+					break;
+				case SDLK_RIGHT:
+					if (map_input_controls[(int)Components::InputControls::RIGHT_KEY] == true)
+					{
+						map_input_controls[(int)Components::InputControls::RIGHT_KEY] = false;
+					}
+					break;
+				case SDLK_SPACE:
+					if (map_input_controls[(int)Components::InputControls::SPACE_KEY] == true)
+					{
+						map_input_controls[(int)Components::InputControls::SPACE_KEY] = false;
+					}
+					break;
 				}
 			break;
 			case SDL_QUIT:

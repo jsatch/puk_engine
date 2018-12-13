@@ -12,6 +12,7 @@
 #include <functional>
 #include "ECS/System.hpp"
 #include "Components/InputMapComponent.hpp"
+#include "PUK/Log.hpp"
 
 namespace Components
 {

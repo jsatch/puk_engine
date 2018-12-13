@@ -50,18 +50,22 @@ namespace Worlds
 			// Adding input handlers to the entity
 			Components::InputHandlerComponent handlers_component{};
 			handlers_component.addHandler(Components::InputControls::LEFT_KEY, [&]() -> void {
+				PUK_CLIENT_INFO("LEFT_KEY");
 				auto tc = (*scott_entity).get_component_by_type_id<ECS::TransformComponent>();
 				(*tc).posX -= 10;
 			});
 			handlers_component.addHandler(Components::InputControls::RIGHT_KEY, [&]() -> void {
+				PUK_CLIENT_INFO("RIGHT_KEY");
 				auto tc = (*scott_entity).get_component_by_type_id<ECS::TransformComponent>();
 				(*tc).posX += 10;
 			});
 			handlers_component.addHandler(Components::InputControls::UP_KEY, [&]() -> void {
+				PUK_CLIENT_INFO("UP_KEY");
 				auto tc = (*scott_entity).get_component_by_type_id<ECS::TransformComponent>();
 				(*tc).posY -= 10;
 			});
 			handlers_component.addHandler(Components::InputControls::DOWN_KEY, [&]() -> void {
+				PUK_CLIENT_INFO("DOWN_KEY");
 				auto tc = (*scott_entity).get_component_by_type_id<ECS::TransformComponent>();
 				(*tc).posY += 10;
 			});
