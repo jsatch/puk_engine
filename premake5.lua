@@ -79,7 +79,7 @@ project "Sandbox"
 
   files
   {
-    "projects/%{prj.name}/src/**.hpp",
+    "projects/%{prj.name}/include/**.hpp",
     "projects/%{prj.name}/src/**.cpp"
   }
 
@@ -119,6 +119,7 @@ project "Sandbox"
     {
       "vendor/spdlog/include",
       "projects/PUKEngine/include",
+      "projects/sandbox/include",
       "../../cpp_libs/SDL2-devel-2.0.8-VC/SDL2/include",
       "../../cpp_libs/SDL2_image-devel-2.0.3-VC/SDL2_image/include"
     }
