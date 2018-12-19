@@ -58,8 +58,14 @@ namespace ECS
 		SDL_Rect destRect{};
 		destRect.x = static_cast<int>(tc.posX);
 		destRect.y = static_cast<int>(tc.posY);
-		destRect.w = sc.w;
-		destRect.h = sc.h;
+        if (sc.scale <= 0.0f)
+        {
+            destRect.w = sc.w;
+            destRect.h = sc.h;
+        }else{
+            destRect.w = sc.w * sc.scale;
+            destRect.h = sc.h * sc.scale;
+        }
 		SDL_RenderClear(renderer);
 		SDL_RenderCopy(renderer, sc.get_texture(), NULL, &destRect);
 		SDL_RenderPresent(renderer);

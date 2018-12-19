@@ -56,7 +56,9 @@ namespace ECS
 		SDL_Texture* texture;
     public:
         int w, h;
+        float scale = 0.0f;
         SpriteComponent(int w, int h, std::string filename);
+        SpriteComponent(int w, int h, float scale, std::string filename);
         ~SpriteComponent();
 		std::string get_filename(){ return filename; }
 		void set_texture(SDL_Texture* tex){ texture = tex; }
