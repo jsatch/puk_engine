@@ -20,6 +20,7 @@ namespace Entities
 			auto handlers_component = Components::InputHandlerComponent{};
 
 			handlers_component.addHandler(Components::InputControls::LEFT_KEY, [&]() -> void {
+                PUK_CLIENT_INFO("LEFT");
 				auto tc = get_component_by_type_id<ECS::TransformComponent>();
 				tc.posX -= 10;
 			});

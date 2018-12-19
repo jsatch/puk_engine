@@ -14,8 +14,10 @@ namespace Systems
 			if (im.get_bit(i))
 			{
 				auto handler_component = entity.get_component_by_type_id<Components::InputHandlerComponent>();
-				auto f = handler_component.dispatch(i);
-				if (f != nullptr) f();
+				auto& f = handler_component.dispatch(i);
+                if (f != nullptr){
+                    f();
+                }
 			}
 			
 		}
