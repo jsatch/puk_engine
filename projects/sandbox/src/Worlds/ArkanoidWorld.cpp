@@ -7,7 +7,12 @@ namespace Worlds {
 
 		define_global_handlers();
 		create_systems();
+        
 		register_systems();
+        
+        create_paddle_entity();
+        
+        init();
 	}
 
 	ArkanoidWorld::~ArkanoidWorld()
@@ -31,7 +36,7 @@ namespace Worlds {
 	{
 		// Render System
 		auto gp = ECS::GameProperties{ "Sandbox", SDL_WINDOW_SHOWN, 800, 600 };
-		auto render_system = std::make_shared<ECS::RenderSystem>(gp);
+		render_system = std::make_shared<ECS::RenderSystem>(gp);
 
 		(*render_system).register_component<ECS::SpriteComponent>();
 		(*render_system).register_component<ECS::TransformComponent>();
@@ -55,10 +60,19 @@ namespace Worlds {
 		register_system(render_system);
 		register_system(event_system);
 	}
+    
+    void ArkanoidWorld::init()
+    {
+        (*render_system).init();
+        
+        // Loading sprite
+        (*render_system).loading_sprite(*paddle_entity);
+    }
 
 	void ArkanoidWorld::create_paddle_entity()
 	{
-
+        paddle_entity = std::make_shared<Entities::Paddle>();
+        add_entity(paddle_entity);
 	}
 
 	void ArkanoidWorld::create_ball_entity()

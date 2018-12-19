@@ -95,7 +95,8 @@ project "Sandbox"
     includedirs
     {
       "vendor/spdlog/include",
-      "projects/PUKEngine/include"
+      "projects/PUKEngine/include",
+      "projects/sandbox/include"
     }
 
     frameworkdirs

@@ -21,7 +21,8 @@ PUK::Application* PUK::create_application(){
 
 	PUK::Application* app = new SandBox();
 	//auto event_system = std::make_unique<Systems::SDLEventSystem>();
-	app->set_initial_world(new Worlds::MenuWorld(std::make_unique<Systems::SDLEventSystem>()));
+	/*app->set_initial_world(new Worlds::ArkanoidWorld(std::make_unique<Systems::SDLEventSystem>()));*/
+    app->set_initial_world(new Worlds::MenuWorld(std::make_unique<Systems::SDLEventSystem>()));
 
     return app;
 }

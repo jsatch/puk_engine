@@ -28,9 +28,9 @@ namespace ECS
 		
 		// Analizar mejor por que esta funcion no puede ser const
 		template <typename T>
-		T* get_component_by_type_id()
+		T& get_component_by_type_id()
 		{
-			return (T*)components[get_component_type_id<T>()].get();
+			return (T&)(*components[get_component_type_id<T>()].get());
 		}
 
 		template <typename T>

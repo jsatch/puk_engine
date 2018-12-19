@@ -13,6 +13,7 @@
 		64204FE1C36B13A0A6C965DD6554AF9276440E5E5C7BC1E0 /* Application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2492CEEF7BAD3228614BD67349D085DA58423136D0DED868 /* Application.cpp */; };
 		80B5918A88B3ABBC59BC0E0FB997A3AE675BC3DECCAFD9FC /* Log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C132EF2CC33E4A84C340ECC8E9647A36D84F16BC506B70C4 /* Log.cpp */; };
 		C79DEBB55CB4FBAEC492F91CD10F40A0AA3F5A044EF2C9EE /* EventSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B2ABCF7290B08D6946060313B34E58880C5F0636F25CF16 /* EventSystem.cpp */; };
+		D41D0A048EF309896FB3C45A8E95ECBBAEC4231C8EA9FC9 /* WorldManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 82BFEA40EC4E073122A9F4BD43B37A239BC18B35F5C19571 /* WorldManager.cpp */; };
 		DCABF7519065F670EB19FC6784653FE2ED623526095054B0 /* TextureManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9BAE44281CC754F838D99E2F60DB262AD4E403BE54ACAB38 /* TextureManager.cpp */; };
 		E448B6D3DE367DA6758F3A3FA0F6DE18E5606DAFE2BBBE6 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C8E5A1F8462E96E7BA751CF68A9F1A099F6B90EC971FAE /* SDL2_image.framework */; };
 		EDDE5CD01F6B598D3586E0EB63B9FEFFEF6F5046A5E137CD /* System.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7CC9949CF5F493F55696F7BA17C04127C262525F54756A35 /* System.cpp */; };
@@ -31,6 +32,7 @@
 		765350F1C27F2789F310A7EFB450CAA5E00C31ED74E68B8 /* RenderSystem.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; name = RenderSystem.hpp; path = include/Systems/RenderSystem.hpp; sourceTree = "<group>"; };
 		7CC9949CF5F493F55696F7BA17C04127C262525F54756A35 /* System.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = System.cpp; path = src/ECS/System.cpp; sourceTree = "<group>"; };
 		7F84FF991856A677C22E1594BA40426991A8BE15B16754B7 /* WorldManager.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; name = WorldManager.hpp; path = include/Worlds/WorldManager.hpp; sourceTree = "<group>"; };
+		82BFEA40EC4E073122A9F4BD43B37A239BC18B35F5C19571 /* WorldManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = WorldManager.cpp; path = src/Worlds/WorldManager.cpp; sourceTree = "<group>"; };
 		9BAE44281CC754F838D99E2F60DB262AD4E403BE54ACAB38 /* TextureManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = TextureManager.cpp; path = src/PUK/TextureManager.cpp; sourceTree = "<group>"; };
 		C132EF2CC33E4A84C340ECC8E9647A36D84F16BC506B70C4 /* Log.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Log.cpp; path = src/PUK/Log.cpp; sourceTree = "<group>"; };
 		C45C9E49261E249E5C2873B9053B3ED01AF82C58E1449ADE /* TextureManager.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; name = TextureManager.hpp; path = include/PUK/TextureManager.hpp; sourceTree = "<group>"; };
@@ -39,7 +41,7 @@
 		DC37DCEFB1541CB1A3C5E223E34D676324B7040B5D2CA2F1 /* Component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Component.cpp; path = src/ECS/Component.cpp; sourceTree = "<group>"; };
 		DC8F80D4BBB7796E55C5240ECDE15620422AB44101D23FAE /* Application.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; name = Application.hpp; path = include/PUK/Application.hpp; sourceTree = "<group>"; };
 		E14F046ADD8E17CAF1D225D05C8D07CF24C5629ED645E0A /* Log.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; name = Log.hpp; path = include/PUK/Log.hpp; sourceTree = "<group>"; };
-		E68453988CAF48D5BFCA919586154A474C10D0EA79B0A715 /* libPUKEngine.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPUKEngine.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E68453988CAF48D5BFCA919586154A474C10D0EA79B0A715 /* libPUKEngine.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libPUKEngine.a; path = libPUKEngine.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F46C6CB69CE0371BEE4279E1EA432D4DAFD8E99360622D5B /* System.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; name = System.hpp; path = include/ECS/System.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,12 +117,21 @@
 			name = Components;
 			sourceTree = "<group>";
 		};
+		8388DEA417E8DB355B0A639B1B59AD6749FDB60B9CC65175 /* Worlds */ = {
+			isa = PBXGroup;
+			children = (
+				82BFEA40EC4E073122A9F4BD43B37A239BC18B35F5C19571 /* WorldManager.cpp */,
+			);
+			name = Worlds;
+			sourceTree = "<group>";
+		};
 		8E1F9F995775D418C4C07E444366DFCA4A20803959E7A58 /* src */ = {
 			isa = PBXGroup;
 			children = (
 				9786D2247FA15735DB7BA356CFB4EBE7E07FC45D52331D75 /* ECS */,
 				359A5E0E246A373F798F2F40747DCBF17E935046F6FBFD7F /* PUK */,
 				65600FDA85AE340F2356AEA0289C5AC19C685F36B7C23A4F /* Systems */,
+				8388DEA417E8DB355B0A639B1B59AD6749FDB60B9CC65175 /* Worlds */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -206,21 +217,14 @@
 /* Begin PBXProject section */
 		08FB7793FE84155DC02AAC07 /* Project object */ = {
 			isa = PBXProject;
-			attributes = {
-				LastUpgradeCheck = 0940;
-			};
 			buildConfigurationList = 1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "PUKEngine" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = en;
 			hasScannedForEncodings = 1;
-			knownRegions = (
-				en,
-			);
 			mainGroup = 8F0A3210E16EE4063B5CA56B64B44178E7F6DFE58DFBC246 /* PUKEngine */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6FCD3CFDF96DA1B1D163A89F6A9754D21566B00E6C5705B /* PUKEngine */,
+				6FCD3CFDF96DA1B1D163A89F6A9754D21566B00E6C5705B /* libPUKEngine.a */,
 			);
 		};
 /* End PBXProject section */
@@ -247,96 +251,69 @@
 				DCABF7519065F670EB19FC6784653FE2ED623526095054B0 /* TextureManager.cpp in Sources */,
 				C79DEBB55CB4FBAEC492F91CD10F40A0AA3F5A044EF2C9EE /* EventSystem.cpp in Sources */,
 				5FA4BABD0AC525AA6E12BFD2FEC46F1C705AF89183AF83EA /* RenderSystem.cpp in Sources */,
+				D41D0A048EF309896FB3C45A8E95ECBBAEC4231C8EA9FC9 /* WorldManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		2DA7FE0995CC3B55152BC1463A1ED90751CE2EA94C572195 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++1z";
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
 				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
 				COPY_PHASE_STRIP = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
+				FRAMEWORK_SEARCH_PATHS = (
+					/Library/Frameworks,
+				);
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = PUK_OSX;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					PUK_OSX,
+				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OBJROOT = "../../bin-int/Debug-macosx-x86_64/PUKEngine";
 				ONLY_ACTIVE_ARCH = YES;
 				SYMROOT = "../../bin/Debug-macosx-x86_64/PUKEngine";
-				USER_HEADER_SEARCH_PATHS = "../../vendor/spdlog/include include";
+				USER_HEADER_SEARCH_PATHS = (
+					../../vendor/spdlog/include,
+					include,
+				);
 			};
 			name = Debug;
 		};
 		37EBE06C2E303ECFF6D656331A11101FE60B7D3B30DB50F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++1z";
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CONFIGURATION_BUILD_DIR = "$(SYMROOT)";
 				CONFIGURATION_TEMP_DIR = "$(OBJROOT)";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
-				GCC_NO_COMMON_BLOCKS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					/Library/Frameworks,
+				);
 				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = PUK_OSX;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					PUK_OSX,
+				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OBJROOT = "../../bin-int/Release-macosx-x86_64/PUKEngine";
 				ONLY_ACTIVE_ARCH = NO;
 				SYMROOT = "../../bin/Release-macosx-x86_64/PUKEngine";
-				USER_HEADER_SEARCH_PATHS = "../../vendor/spdlog/include include";
+				USER_HEADER_SEARCH_PATHS = (
+					../../vendor/spdlog/include,
+					include,
+				);
 			};
 			name = Release;
 		};
@@ -344,7 +321,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ENABLE_OBJC_WEAK = YES;
 				CONFIGURATION_BUILD_DIR = "../../bin/Debug-macosx-x86_64/PUKEngine";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -357,7 +333,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ENABLE_OBJC_WEAK = YES;
 				CONFIGURATION_BUILD_DIR = "../../bin/Release-macosx-x86_64/PUKEngine";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -378,7 +353,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		716DCD7ADC776424391FF1524E027C9667D91D2FD03A264 /* Build configuration list for PBXNativeTarget "PUKEngine" */ = {
+		716DCD7ADC776424391FF1524E027C9667D91D2FD03A264 /* Build configuration list for PBXNativeTarget "libPUKEngine.a" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7DBC08ECD7CECEEA9135CFAE3310225C766C7EFB066A6D2A /* Debug */,
@@ -388,6 +363,6 @@
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
-	};
-	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+};
+rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
 }

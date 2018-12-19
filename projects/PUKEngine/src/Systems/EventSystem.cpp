@@ -4,17 +4,17 @@ namespace Systems
 {
     void EventSystem::draw(ECS::Entity &entity)
     {
-		auto im = entity.get_component_by_type_id<Components::InputMapComponent>();
-		(*im).reset();
+		auto& im = entity.get_component_by_type_id<Components::InputMapComponent>();
+		im.reset();
 
-		(*im).set_map(map_input_controls);
+		im.set_map(map_input_controls);
 		
 		for (auto i = 0; i < (int)Components::InputControls::_COUNT ; i++)
 		{
-			if ((*im).get_bit(i))
+			if (im.get_bit(i))
 			{
 				auto handler_component = entity.get_component_by_type_id<Components::InputHandlerComponent>();
-				auto f = (*handler_component).dispatch(i);
+				auto f = handler_component.dispatch(i);
 				if (f != nullptr) f();
 			}
 			

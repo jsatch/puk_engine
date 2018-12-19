@@ -4,10 +4,6 @@
 #include <functional>
 #include "Systems/EventSystem.hpp"
 
-namespace Systems
-{
-	enum EventType;
-}
 
 namespace Components {
 

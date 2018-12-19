@@ -24,11 +24,11 @@ namespace ECS {
     class RenderSystem : public ECS::System
     {
     private:
-        GameProperties properties;
+        std::unique_ptr<GameProperties> properties;
         SDL_Window* win;
         SDL_Renderer* renderer;
     public:
-        RenderSystem(GameProperties properties);
+        RenderSystem(GameProperties &properties);
         ~RenderSystem();
         void init();
 		void loading_sprite(ECS::Entity &);

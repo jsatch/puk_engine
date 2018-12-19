@@ -23,35 +23,15 @@ namespace Worlds
         std::vector<std::shared_ptr<ECS::System>> systems;
 		std::shared_ptr<PUK::Application> app;
     public:
-		World()
-		{}
-		virtual ~World()
-		{}
+        World();
+        virtual ~World();
 
-		void set_application(std::shared_ptr<PUK::Application> application)
-		{
-			app = std::move(application);
-		}
-		std::shared_ptr<PUK::Application> get_application()
-		{
-			return app;
-		}
+        void set_application(std::shared_ptr<PUK::Application> application);
+        std::shared_ptr<PUK::Application> get_application();
 
-		void register_system(std::shared_ptr<ECS::System> system)
-		{
-			systems.push_back(system);
-		}
+        void register_system(const std::shared_ptr<ECS::System> &system);
 
-		void add_entity(std::shared_ptr<ECS::Entity> &entity)
-		{
-			entities.push_back(entity);
-		}
-
-		/*void add_entity(ECS::Entity& entity)
-		{
-			ECS::Entity* en = new ECS::Entity(std::move(entity));
-			entities.push_back(std::unique_ptr<ECS::Entity>(en));
-		}*/
+        void add_entity(const std::shared_ptr<ECS::Entity> &entity);
 
 		virtual void handle_input() = 0;
 		virtual void update(milisecs delta) {};
@@ -75,22 +55,12 @@ namespace Worlds
     private:
         std::stack<std::unique_ptr<World>> worlds_stack;
     public:
-        void push(World* world, PUK::Application* app)
-        {
-			
-			std::unique_ptr<World> uPtr{world};
-			std::shared_ptr<PUK::Application> sPtr{ app };
-			(*uPtr).set_application(sPtr);
-            worlds_stack.push(std::move(uPtr));
-        }
-        void pop()
-        {
-            worlds_stack.pop();
-        }
+        void push(World* world, PUK::Application* app);
+        void pop();
 		template <typename T>
         T* top()
         {
-			return (T*)worlds_stack.top().get();
+            return (T*)worlds_stack.top().get();
         }
     };
 }

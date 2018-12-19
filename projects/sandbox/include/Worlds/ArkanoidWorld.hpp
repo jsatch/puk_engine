@@ -6,6 +6,7 @@
 #include "Systems/EventSystem.hpp"
 #include "Components/InputMapComponent.hpp"
 #include "PUK/Log.hpp"
+#include "Entities/Paddle.hpp"
 
 namespace Worlds {
 	class ArkanoidWorld : public World
@@ -13,7 +14,7 @@ namespace Worlds {
 	private:
 		std::shared_ptr<Systems::EventSystem> event_system;
 		std::shared_ptr<ECS::RenderSystem> render_system;
-		std::shared_ptr<ECS::Entity> scott_entity;
+		std::shared_ptr<ECS::Entity> paddle_entity;
 	public:
 		ArkanoidWorld(std::unique_ptr<Systems::EventSystem>&& es);
 		~ArkanoidWorld();
@@ -26,5 +27,6 @@ namespace Worlds {
 		void create_ball_entity();
 		void create_brick_entity();
 		void register_systems();
+        void init();
 	};
 }

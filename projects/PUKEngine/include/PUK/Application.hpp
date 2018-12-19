@@ -4,6 +4,11 @@
 #include <memory>
 #include "Worlds/WorldManager.hpp"
 
+namespace Worlds {
+    class World;
+    class WorldManager;
+}
+
 namespace PUK {
 
     class Application
@@ -15,10 +20,7 @@ namespace PUK {
         Application();
         virtual ~Application();
         void run();
-		void set_initial_world(Worlds::World* world)
-		{
-			(*world_manager).push(world, this);
-		}
+        void set_initial_world(Worlds::World* world);
 		void stop();
     };
     Application* create_application();

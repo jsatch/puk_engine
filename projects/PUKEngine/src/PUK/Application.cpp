@@ -7,6 +7,10 @@ namespace PUK {
 	}
     Application::~Application()
     {}
+    void Application::set_initial_world(Worlds::World* world)
+    {
+        (*world_manager).push(world, this);
+    }
     void Application::run() 
     {
 		running = true;

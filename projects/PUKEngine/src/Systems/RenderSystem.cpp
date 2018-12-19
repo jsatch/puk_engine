@@ -2,9 +2,9 @@
 
 namespace ECS
 {
-    RenderSystem::RenderSystem(GameProperties properties)
+    RenderSystem::RenderSystem(GameProperties &properties)
     {        
-        this->properties = properties;
+        this->properties = std::make_unique<GameProperties>(std::move(properties));
     }
     RenderSystem::~RenderSystem()
     {
@@ -19,12 +19,12 @@ namespace ECS
             PUK_CORE_ERROR("Error SDL_Init: {}", SDL_GetError());
         }
         win = SDL_CreateWindow(
-            properties.game_title, 
+            (*properties).game_title,
             SDL_WINDOWPOS_CENTERED, 
             SDL_WINDOWPOS_CENTERED, 
-            properties.width, 
-            properties.height, 
-            properties.window_mode);
+            (*properties).width,
+            (*properties).height,
+            (*properties).window_mode);
         
         if (win == nullptr)
         {
@@ -47,21 +47,21 @@ namespace ECS
 	{
 		assert(entity.has_component<ECS::SpriteComponent>());
 
-		ECS::SpriteComponent* sc = entity.get_component_by_type_id<ECS::SpriteComponent>();
-		SDL_Texture* tex = Util::TextureManager::load_texture(sc->get_filename(), renderer);
-		sc->set_texture(tex);
+		auto& sc = entity.get_component_by_type_id<ECS::SpriteComponent>();
+		SDL_Texture* tex = Util::TextureManager::load_texture(sc.get_filename(), renderer);
+		sc.set_texture(tex);
 	}
     void RenderSystem::draw(ECS::Entity& entity)
     {
-		ECS::TransformComponent* tc = entity.get_component_by_type_id<ECS::TransformComponent>();
-		ECS::SpriteComponent* sc = entity.get_component_by_type_id<ECS::SpriteComponent>();
+		auto&& tc = entity.get_component_by_type_id<ECS::TransformComponent>();
+		auto&& sc = entity.get_component_by_type_id<ECS::SpriteComponent>();
 		SDL_Rect destRect{};
-		destRect.x = static_cast<int>(tc->posX);
-		destRect.y = static_cast<int>(tc->posY);
-		destRect.w = sc->w;
-		destRect.h = sc->h;
+		destRect.x = static_cast<int>(tc.posX);
+		destRect.y = static_cast<int>(tc.posY);
+		destRect.w = sc.w;
+		destRect.h = sc.h;
 		SDL_RenderClear(renderer);
-		SDL_RenderCopy(renderer, sc->get_texture(), NULL, &destRect);
+		SDL_RenderCopy(renderer, sc.get_texture(), NULL, &destRect);
 		SDL_RenderPresent(renderer);
     }
 }
