@@ -10,7 +10,7 @@ namespace Worlds {
         
 		register_systems();
         
-        create_paddle_entity();
+		create_paddles_entities();
         
         init();
 	}
@@ -66,13 +66,16 @@ namespace Worlds {
         (*render_system).init();
         
         // Loading sprite
-        (*render_system).loading_sprite(*paddle_entity);
+        (*render_system).loading_sprite(*paddle_entity1);
+		(*render_system).loading_sprite(*paddle_entity2);
     }
 
-	void ArkanoidWorld::create_paddle_entity()
+	void ArkanoidWorld::create_paddles_entities()
 	{
-        paddle_entity = std::make_shared<Entities::Paddle>();
-        add_entity(paddle_entity);
+        paddle_entity1 = std::make_shared<Entities::Paddle>(10.0f, 10.0f, true);
+        add_entity(paddle_entity1);
+		paddle_entity2 = std::make_shared<Entities::Paddle>(10.0f, 500.0f, false);
+		add_entity(paddle_entity2);
 	}
 
 	void ArkanoidWorld::create_ball_entity()

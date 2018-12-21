@@ -65,6 +65,30 @@ namespace Systems
 							map_input_controls[(int)Components::InputControls::RIGHT_KEY] = true;
 						}
 						break;
+					case SDLK_w:
+						if (map_input_controls[(int)Components::InputControls::W_KEY] == false)
+						{
+							map_input_controls[(int)Components::InputControls::W_KEY] = true;
+						}
+						break;
+					case SDLK_s:
+						if (map_input_controls[(int)Components::InputControls::S_KEY] == false)
+						{
+							map_input_controls[(int)Components::InputControls::S_KEY] = true;
+						}
+						break;
+					case SDLK_a:
+						if (map_input_controls[(int)Components::InputControls::A_KEY] == false)
+						{
+							map_input_controls[(int)Components::InputControls::A_KEY] = true;
+						}
+						break;
+					case SDLK_d:
+						if (map_input_controls[(int)Components::InputControls::D_KEY] == false)
+						{
+							map_input_controls[(int)Components::InputControls::D_KEY] = true;
+						}
+						break;
 					case SDLK_SPACE:
 						if (map_input_controls[(int)Components::InputControls::SPACE_KEY] == false)
 						{
@@ -98,6 +122,30 @@ namespace Systems
 					if (map_input_controls[(int)Components::InputControls::RIGHT_KEY] == true)
 					{
 						map_input_controls[(int)Components::InputControls::RIGHT_KEY] = false;
+					}
+					break;
+				case SDLK_w:
+					if (map_input_controls[(int)Components::InputControls::W_KEY] == true)
+					{
+						map_input_controls[(int)Components::InputControls::W_KEY] = false;
+					}
+					break;
+				case SDLK_s:
+					if (map_input_controls[(int)Components::InputControls::S_KEY] == true)
+					{
+						map_input_controls[(int)Components::InputControls::S_KEY] = false;
+					}
+					break;
+				case SDLK_a:
+					if (map_input_controls[(int)Components::InputControls::A_KEY] == true)
+					{
+						map_input_controls[(int)Components::InputControls::A_KEY] = false;
+					}
+					break;
+				case SDLK_d:
+					if (map_input_controls[(int)Components::InputControls::D_KEY] == true)
+					{
+						map_input_controls[(int)Components::InputControls::D_KEY] = false;
 					}
 					break;
 				case SDLK_SPACE:

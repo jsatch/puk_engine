@@ -116,6 +116,7 @@
     <ClCompile Include="src\PUK\TextureManager.cpp" />
     <ClCompile Include="src\Systems\EventSystem.cpp" />
     <ClCompile Include="src\Systems\RenderSystem.cpp" />
+    <ClCompile Include="src\Worlds\WorldManager.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

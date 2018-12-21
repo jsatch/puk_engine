@@ -9,37 +9,46 @@ namespace Entities
 	class Paddle : public ECS::Entity
 	{
     public:
-		Paddle()
+		Paddle(float startX, float startY, bool player1)
 		{
             PUK_CLIENT_INFO("Se creo Paddle");
-			add_component<ECS::SpriteComponent>({ 36, 12, 2.0f	 ,"assets/paddle1.png" });
-			add_component<ECS::TransformComponent>({ 10.0f, 10.0f });
+			if (player1)
+			{
+				add_component<ECS::SpriteComponent>({ 36, 12, 2.0f	 ,"assets/paddle1.png" });
+			}
+			else
+			{
+				add_component<ECS::SpriteComponent>({ 36, 12, 2.0f	 ,"assets/paddle2.png" });
+			}
+			add_component<ECS::TransformComponent>({ startX, startY });
 			add_component<Components::InputMapComponent>({});
 
 			// Adding input handlers to the entity
 			auto handlers_component = Components::InputHandlerComponent{};
 
-			handlers_component.addHandler(Components::InputControls::LEFT_KEY, [&]() -> void {
-				auto& tc = get_component_by_type_id<ECS::TransformComponent>();
-				tc.posX -= 0.5;
-                PUK_CLIENT_INFO("LEFT: {}", tc.posX);
-			});
-			handlers_component.addHandler(Components::InputControls::RIGHT_KEY, [&]() -> void {
-				auto& tc = get_component_by_type_id<ECS::TransformComponent>();
-				tc.posX += 0.5;
-                PUK_CLIENT_INFO("RIGHT: {}", tc.posX);
-			});
-			/*handlers_component.addHandler(Components::InputControls::UP_KEY, [&]() -> void {
-                PUK_CLIENT_INFO("UP");
-				auto& tc = get_component_by_type_id<ECS::TransformComponent>();
-				tc.posY -= 0.1;
-			});
-			handlers_component.addHandler(Components::InputControls::DOWN_KEY, [&]() -> void {
-                PUK_CLIENT_INFO("DOWN");
-				auto& tc = get_component_by_type_id<ECS::TransformComponent>();
-				tc.posY += 0.1;
-			});*/
-            add_component<Components::InputHandlerComponent>(std::move(handlers_component));
+			if (player1)
+			{
+				handlers_component.addHandler(Components::InputControls::LEFT_KEY, [&]() -> void {
+					auto& tc = get_component_by_type_id<ECS::TransformComponent>();
+					tc.posX -= 10;
+				});
+				handlers_component.addHandler(Components::InputControls::RIGHT_KEY, [&]() -> void {
+					auto& tc = get_component_by_type_id<ECS::TransformComponent>();
+					tc.posX += 10;
+				});	
+			}else
+			{
+				handlers_component.addHandler(Components::InputControls::A_KEY, [&]() -> void {
+					auto& tc = get_component_by_type_id<ECS::TransformComponent>();
+					tc.posX -= 10;
+				});
+				handlers_component.addHandler(Components::InputControls::D_KEY, [&]() -> void {
+					auto& tc = get_component_by_type_id<ECS::TransformComponent>();
+					tc.posX += 10;
+				});
+			}
+			add_component<Components::InputHandlerComponent>(std::move(handlers_component));
+			
 		}
 	};
 }

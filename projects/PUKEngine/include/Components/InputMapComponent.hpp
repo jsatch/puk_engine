@@ -9,7 +9,8 @@ namespace Components {
 
 	enum class InputControls
 	{
-		LEFT_KEY, RIGHT_KEY, UP_KEY, DOWN_KEY, 
+		LEFT_KEY, RIGHT_KEY, UP_KEY, DOWN_KEY,
+		A_KEY, D_KEY, W_KEY, S_KEY,
 		SPACE_KEY,
 		_COUNT
 	};
@@ -50,11 +51,11 @@ namespace Components {
 	public:
 		void addHandler(InputControls &&type, EventFunction&& f)
 		{
-			handlers[(int)type] = f;
+			handlers[static_cast<int>(type)] = f;
 		}
 		EventFunction& dispatch(InputControls &&type)
 		{
-			return handlers[(int)type];
+			return handlers[static_cast<int>(type)];
 		}
 
 		EventFunction& dispatch(int pos)

@@ -14,7 +14,8 @@ namespace Worlds {
 	private:
 		std::shared_ptr<Systems::EventSystem> event_system;
 		std::shared_ptr<ECS::RenderSystem> render_system;
-		std::shared_ptr<ECS::Entity> paddle_entity;
+		std::shared_ptr<ECS::Entity> paddle_entity1;
+		std::shared_ptr<ECS::Entity> paddle_entity2;
 	public:
 		ArkanoidWorld(std::unique_ptr<Systems::EventSystem>&& es);
 		~ArkanoidWorld();
@@ -23,7 +24,7 @@ namespace Worlds {
 	private:
 		void create_systems();
 		void define_global_handlers();
-		void create_paddle_entity();
+		void create_paddles_entities();
 		void create_ball_entity();
 		void create_brick_entity();
 		void register_systems();
