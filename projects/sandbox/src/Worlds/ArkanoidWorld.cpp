@@ -20,11 +20,6 @@ namespace Worlds {
 
 	}
 
-	void ArkanoidWorld::update(milisecs delta)
-	{
-
-	}
-
 	void ArkanoidWorld::handle_input()
 	{
 		(*event_system).handle_input();

@@ -15,7 +15,7 @@ namespace PUK {
 
 namespace Worlds
 {
-    using milisecs = unsigned int;
+    
     class World
     {
     protected:
@@ -34,18 +34,21 @@ namespace Worlds
         void add_entity(const std::shared_ptr<ECS::Entity> &entity);
 
 		virtual void handle_input() = 0;
-		virtual void update(milisecs delta) {};
-		virtual void render() 
+
+		virtual void render()
 		{
 			for (auto& sp_system: systems)
 			{
+				(*sp_system).start();
 				for (auto& up_entity : entities)
 				{
 					if ((*sp_system).has_match(*up_entity))
 					{
+						(*sp_system).update(1000, *up_entity); // TODO delta time should be passed instead;
 						(*sp_system).draw(*up_entity);
 					}
 				}
+				(*sp_system).end();
 			}
 		};
     };

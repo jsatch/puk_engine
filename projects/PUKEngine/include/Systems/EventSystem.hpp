@@ -61,7 +61,10 @@ namespace Systems
 			global_listeners[type] = f;
 		}
         virtual void draw(ECS::Entity &) override;
+		virtual void update(ECS::milisecs dt, ECS::Entity &entity) override;
 		virtual void handle_input() = 0;
+		virtual void start() = 0;
+		virtual void end() = 0;
 	};
     
 	class SDLEventSystem : public EventSystem
@@ -70,5 +73,7 @@ namespace Systems
         SDLEventSystem(){}
         ~SDLEventSystem(){}
 		virtual void handle_input() override;
+		virtual void start() override;
+		virtual void end() override;
 	};
 }

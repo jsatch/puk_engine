@@ -32,6 +32,9 @@ namespace ECS {
         ~RenderSystem();
         void init();
 		void loading_sprite(ECS::Entity &);
+		void update(milisecs dt, ECS::Entity &entity);
         void draw(ECS::Entity &) override;
+		void start() override;
+		void end() override;
     };
 }

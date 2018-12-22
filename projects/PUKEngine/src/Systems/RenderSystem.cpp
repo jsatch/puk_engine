@@ -6,12 +6,14 @@ namespace ECS
     {        
         this->properties = std::make_unique<GameProperties>(std::move(properties));
     }
+
     RenderSystem::~RenderSystem()
     {
         SDL_DestroyRenderer(renderer);
         SDL_DestroyWindow(win);
         SDL_Quit();
     }
+
     void RenderSystem::init()
     {
         if( SDL_Init( SDL_INIT_VIDEO ) < 0 )
@@ -43,6 +45,9 @@ namespace ECS
             SDL_Quit();
         }
     }
+
+	void RenderSystem::update(milisecs dt, ECS::Entity &entity) {}
+
 	void RenderSystem::loading_sprite(ECS::Entity & entity)
 	{
 		assert(entity.has_component<ECS::SpriteComponent>());
@@ -66,8 +71,17 @@ namespace ECS
             destRect.w = sc.w * sc.scale;
             destRect.h = sc.h * sc.scale;
         }
-		SDL_RenderClear(renderer);
-		SDL_RenderCopy(renderer, sc.get_texture(), NULL, &destRect);
-		SDL_RenderPresent(renderer);
+		
+		SDL_RenderCopy(renderer, sc.get_texture(), NULL, &destRect);		
     }
+
+	void RenderSystem::start()
+	{
+		SDL_RenderClear(renderer);
+	}
+
+	void RenderSystem::end()
+	{
+		SDL_RenderPresent(renderer);
+	}
 }

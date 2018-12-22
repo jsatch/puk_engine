@@ -19,7 +19,6 @@ namespace Worlds {
 	public:
 		ArkanoidWorld(std::unique_ptr<Systems::EventSystem>&& es);
 		~ArkanoidWorld();
-		virtual void update(milisecs delta) override;
 		virtual void handle_input() override;
 	private:
 		void create_systems();

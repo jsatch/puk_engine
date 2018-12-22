@@ -2,7 +2,9 @@
 
 namespace Systems
 {
-    void EventSystem::draw(ECS::Entity &entity)
+	void EventSystem::draw(ECS::Entity &) {};
+
+    void EventSystem::update(ECS::milisecs dt, ECS::Entity &entity)
     {
 		auto& im = entity.get_component_by_type_id<Components::InputMapComponent>();
 		im.reset();
@@ -22,7 +24,7 @@ namespace Systems
 			
 		}
     }
-    
+
 	void SDLEventSystem::handle_input()
 	{
 		//map_input_controls.reset();
@@ -165,4 +167,8 @@ namespace Systems
 			}
 		}
 	}
+
+	void SDLEventSystem::start() {}
+
+	void SDLEventSystem::end() {}
 }
