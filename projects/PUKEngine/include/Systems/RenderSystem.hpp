@@ -10,6 +10,8 @@
 #include "ECS/System.hpp"
 #include "ECS/Entity.hpp"
 #include "ECS/Component.hpp"
+#include "Components/TransformComponent.hpp"
+#include "Components/SpriteComponent.hpp"
 #include "PUK/Log.hpp"
 #include "PUK/TextureManager.hpp" 
 

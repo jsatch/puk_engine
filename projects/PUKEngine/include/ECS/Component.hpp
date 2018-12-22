@@ -39,29 +39,4 @@ namespace ECS
         ~Component();
         ComponentId get_id();
     };
-
-    struct TransformComponent : public Component
-    {
-    private:
-    public:
-        float posX, posY;
-        TransformComponent(float x, float y);
-        ~TransformComponent();
-    };
-
-    struct SpriteComponent : public Component
-    {
-    private:
-		std::string filename = "";
-		SDL_Texture* texture;
-    public:
-        int w, h;
-        float scale = 0.0f;
-        SpriteComponent(int w, int h, std::string filename);
-        SpriteComponent(int w, int h, float scale, std::string filename);
-        ~SpriteComponent();
-		std::string get_filename(){ return filename; }
-		void set_texture(SDL_Texture* tex){ texture = tex; }
-		SDL_Texture* get_texture() { return texture; }
-    };
 }

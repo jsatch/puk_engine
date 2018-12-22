@@ -39,6 +39,9 @@
     <ClInclude Include="include\Components\InputMapComponent.hpp">
       <Filter>include\Components</Filter>
     </ClInclude>
+    <ClInclude Include="include\Components\TransformComponent.hpp">
+      <Filter>include\Components</Filter>
+    </ClInclude>
     <ClInclude Include="include\ECS\Component.hpp">
       <Filter>include\ECS</Filter>
     </ClInclude>
@@ -66,11 +69,17 @@
     <ClInclude Include="include\Systems\EventSystem.hpp">
       <Filter>include\Systems</Filter>
     </ClInclude>
+    <ClInclude Include="include\Systems\PhysicsSystem.hpp">
+      <Filter>include\Systems</Filter>
+    </ClInclude>
     <ClInclude Include="include\Systems\RenderSystem.hpp">
       <Filter>include\Systems</Filter>
     </ClInclude>
     <ClInclude Include="include\Worlds\WorldManager.hpp">
       <Filter>include\Worlds</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Components\SpriteComponent.hpp">
+      <Filter>include\Components</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -90,6 +99,9 @@
       <Filter>src\PUK</Filter>
     </ClCompile>
     <ClCompile Include="src\Systems\EventSystem.cpp">
+      <Filter>src\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Systems\PhysicsSystem.cpp">
       <Filter>src\Systems</Filter>
     </ClCompile>
     <ClCompile Include="src\Systems\RenderSystem.cpp">

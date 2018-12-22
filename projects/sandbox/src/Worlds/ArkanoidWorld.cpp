@@ -33,8 +33,8 @@ namespace Worlds {
 		auto gp = ECS::GameProperties{ "Sandbox", SDL_WINDOW_SHOWN, 800, 600 };
 		render_system = std::make_shared<ECS::RenderSystem>(gp);
 
-		(*render_system).register_component<ECS::SpriteComponent>();
-		(*render_system).register_component<ECS::TransformComponent>();
+		(*render_system).register_component<Components::SpriteComponent>();
+		(*render_system).register_component<Components::TransformComponent>();
 
 		//Event system
 		(*event_system).register_component<Components::InputMapComponent>();

@@ -96,6 +96,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="include\Components\InputMapComponent.hpp" />
+    <ClInclude Include="include\Components\SpriteComponent.hpp" />
+    <ClInclude Include="include\Components\TransformComponent.hpp" />
     <ClInclude Include="include\ECS\Component.hpp" />
     <ClInclude Include="include\ECS\Entity.hpp" />
     <ClInclude Include="include\ECS\System.hpp" />
@@ -105,6 +107,7 @@
     <ClInclude Include="include\PUK\Log.hpp" />
     <ClInclude Include="include\PUK\TextureManager.hpp" />
     <ClInclude Include="include\Systems\EventSystem.hpp" />
+    <ClInclude Include="include\Systems\PhysicsSystem.hpp" />
     <ClInclude Include="include\Systems\RenderSystem.hpp" />
     <ClInclude Include="include\Worlds\WorldManager.hpp" />
   </ItemGroup>
@@ -115,6 +118,7 @@
     <ClCompile Include="src\PUK\Log.cpp" />
     <ClCompile Include="src\PUK\TextureManager.cpp" />
     <ClCompile Include="src\Systems\EventSystem.cpp" />
+    <ClCompile Include="src\Systems\PhysicsSystem.cpp" />
     <ClCompile Include="src\Systems\RenderSystem.cpp" />
     <ClCompile Include="src\Worlds\WorldManager.cpp" />
   </ItemGroup>

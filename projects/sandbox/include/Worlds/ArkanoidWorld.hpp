@@ -5,6 +5,8 @@
 #include "Systems/RenderSystem.hpp"
 #include "Systems/EventSystem.hpp"
 #include "Components/InputMapComponent.hpp"
+#include "Components/TransformComponent.hpp"
+#include "Components/SpriteComponent.hpp"
 #include "PUK/Log.hpp"
 #include "Entities/Paddle.hpp"
 

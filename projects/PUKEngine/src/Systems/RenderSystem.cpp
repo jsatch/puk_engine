@@ -50,16 +50,16 @@ namespace ECS
 
 	void RenderSystem::loading_sprite(ECS::Entity & entity)
 	{
-		assert(entity.has_component<ECS::SpriteComponent>());
+		assert(entity.has_component<Components::SpriteComponent>());
 
-		auto& sc = entity.get_component_by_type_id<ECS::SpriteComponent>();
+		auto& sc = entity.get_component_by_type_id<Components::SpriteComponent>();
 		SDL_Texture* tex = Util::TextureManager::load_texture(sc.get_filename(), renderer);
 		sc.set_texture(tex);
 	}
     void RenderSystem::draw(ECS::Entity& entity)
     {
-		auto&& tc = entity.get_component_by_type_id<ECS::TransformComponent>();
-		auto&& sc = entity.get_component_by_type_id<ECS::SpriteComponent>();
+		auto&& tc = entity.get_component_by_type_id<Components::TransformComponent>();
+		auto&& sc = entity.get_component_by_type_id<Components::SpriteComponent>();
 		SDL_Rect destRect{};
 		destRect.x = static_cast<int>(tc.posX);
 		destRect.y = static_cast<int>(tc.posY);
