@@ -4,11 +4,13 @@
 #include "Worlds/WorldManager.hpp"
 #include "Systems/RenderSystem.hpp"
 #include "Systems/EventSystem.hpp"
+#include "Systems/PhysicsSystem.hpp"
 #include "Components/InputMapComponent.hpp"
 #include "Components/TransformComponent.hpp"
 #include "Components/SpriteComponent.hpp"
 #include "PUK/Log.hpp"
 #include "Entities/Paddle.hpp"
+#include "Entities/Ball.hpp"
 
 namespace Worlds {
 	class ArkanoidWorld : public World
@@ -16,8 +18,10 @@ namespace Worlds {
 	private:
 		std::shared_ptr<Systems::EventSystem> event_system;
 		std::shared_ptr<ECS::RenderSystem> render_system;
+		std::shared_ptr<Systems::Physics::PhysicsSystem> physics_system;
 		std::shared_ptr<ECS::Entity> paddle_entity1;
 		std::shared_ptr<ECS::Entity> paddle_entity2;
+		std::shared_ptr<ECS::Entity> ball_entity;
 	public:
 		ArkanoidWorld(std::unique_ptr<Systems::EventSystem>&& es);
 		~ArkanoidWorld();

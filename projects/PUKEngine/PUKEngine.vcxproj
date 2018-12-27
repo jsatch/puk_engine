@@ -96,6 +96,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="include\Components\InputMapComponent.hpp" />
+    <ClInclude Include="include\Components\PhysicsComponent.hpp" />
     <ClInclude Include="include\Components\SpriteComponent.hpp" />
     <ClInclude Include="include\Components\TransformComponent.hpp" />
     <ClInclude Include="include\ECS\Component.hpp" />

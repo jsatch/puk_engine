@@ -1,6 +1,13 @@
 #pragma once
 
 #include "ECS/System.hpp"
+#include "Components/PhysicsComponent.hpp"
+#include "Components/TransformComponent.hpp"
+
+namespace Components
+{
+	struct PhysicsComponent;
+}
 
 namespace Systems
 {
@@ -9,34 +16,24 @@ namespace Systems
 		struct Vector2D
 		{
 			float x, y;
-			inline Vector2D& operator= (const Vector2D &v)
-			{
-				x = v.x; y = v.y;
-				return *this;
-			}
-			inline Vector2D& operator+ (const Vector2D &v)
-			{
-				x = x + v.x;
-				y = y + v.y;
-				return *this;
-			}
-			inline Vector2D& operator- (const Vector2D &v)
-			{
-				x = x - v.x;
-				y = y - v.y;
-				return *this;
-			}
-			inline Vector2D& operator8 (const float f)
-			{
-				x = x*f;
-				y = y*f;
-				return *this;
-			}
+			Vector2D();
+			Vector2D(float x, float y);
+			Vector2D(Vector2D &&v);
+			Vector2D& operator= (const Vector2D &v);
+			Vector2D& operator+ (const Vector2D &v);
+			Vector2D& operator- (const Vector2D &v);
+			Vector2D& operator* (const float f);
 		};
-		class PhysicsSystem : ECS::System
+
+		class PhysicsSystem : public ECS::System
 		{
-		private:
 		public:
+			PhysicsSystem();
+			~PhysicsSystem();
+			virtual void draw(ECS::Entity &) override;
+			virtual void update(ECS::milisecs dt, ECS::Entity &entity) override;
+			virtual void start() override;
+			virtual void end() override;
 		};
 	}
 	

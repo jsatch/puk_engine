@@ -39,6 +39,12 @@
     <ClInclude Include="include\Components\InputMapComponent.hpp">
       <Filter>include\Components</Filter>
     </ClInclude>
+    <ClInclude Include="include\Components\PhysicsComponent.hpp">
+      <Filter>include\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Components\SpriteComponent.hpp">
+      <Filter>include\Components</Filter>
+    </ClInclude>
     <ClInclude Include="include\Components\TransformComponent.hpp">
       <Filter>include\Components</Filter>
     </ClInclude>
@@ -77,9 +83,6 @@
     </ClInclude>
     <ClInclude Include="include\Worlds\WorldManager.hpp">
       <Filter>include\Worlds</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Components\SpriteComponent.hpp">
-      <Filter>include\Components</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

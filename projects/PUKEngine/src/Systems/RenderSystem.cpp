@@ -61,8 +61,8 @@ namespace ECS
 		auto&& tc = entity.get_component_by_type_id<Components::TransformComponent>();
 		auto&& sc = entity.get_component_by_type_id<Components::SpriteComponent>();
 		SDL_Rect destRect{};
-		destRect.x = static_cast<int>(tc.posX);
-		destRect.y = static_cast<int>(tc.posY);
+		destRect.x = static_cast<int>((*tc.position).x);
+		destRect.y = static_cast<int>((*tc.position).y);
         if (sc.scale <= 0.0f)
         {
             destRect.w = sc.w;

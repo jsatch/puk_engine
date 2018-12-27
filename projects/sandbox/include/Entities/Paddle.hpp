@@ -22,7 +22,7 @@ namespace Entities
 			{
 				add_component<Components::SpriteComponent>({ 36, 12, 2.0f	 ,"assets/paddle2.png" });
 			}
-			add_component<Components::TransformComponent>({ startX, startY });
+			add_component<Components::TransformComponent>(Systems::Physics::Vector2D{startX, startY});
 			add_component<Components::InputMapComponent>({});
 
 			// Adding input handlers to the entity
@@ -32,21 +32,21 @@ namespace Entities
 			{
 				handlers_component.addHandler(Components::InputControls::LEFT_KEY, [&]() -> void {
 					auto& tc = get_component_by_type_id<Components::TransformComponent>();
-					tc.posX -= 10;
+					(*tc.position).x -= 10;
 				});
 				handlers_component.addHandler(Components::InputControls::RIGHT_KEY, [&]() -> void {
 					auto& tc = get_component_by_type_id<Components::TransformComponent>();
-					tc.posX += 10;
+					(*tc.position).x += 10;
 				});	
 			}else
 			{
 				handlers_component.addHandler(Components::InputControls::A_KEY, [&]() -> void {
 					auto& tc = get_component_by_type_id<Components::TransformComponent>();
-					tc.posX -= 10;
+					(*tc.position).x -= 10;
 				});
 				handlers_component.addHandler(Components::InputControls::D_KEY, [&]() -> void {
 					auto& tc = get_component_by_type_id<Components::TransformComponent>();
-					tc.posX += 10;
+					(*tc.position).x += 10;
 				});
 			}
 			add_component<Components::InputHandlerComponent>(std::move(handlers_component));

@@ -1,27 +1,43 @@
 #pragma once
 
+#include "PUK/Log.hpp"
 #include "ECS/Component.hpp"
 #include "Systems/PhysicsSystem.hpp"
+
+namespace Systems
+{
+	namespace Physics
+	{
+		struct Vector2D;
+	}
+}
 
 namespace Components
 {
 	struct TransformComponent : public ECS::Component
 	{
-	private:
 	public:
-		float posX, posY;
-		Systems::Physics::Vector2D acceleration;
-		TransformComponent(float x, float y) : ECS::Component()
+		std::unique_ptr<Systems::Physics::Vector2D> position;
+
+		TransformComponent() : ECS::Component()
+		{}
+
+		TransformComponent(Systems::Physics::Vector2D &&pos) : ECS::Component()
 		{
-			posX = x;
-			posY = y;
+			position = std::make_unique<Systems::Physics::Vector2D>(std::move(pos));
 		}
-		TransformComponent(float x, float y, const Systems::Physics::Vector2D &acceleration) : ECS::Component()
+
+		TransformComponent(const TransformComponent &tc)
 		{
-			posX = x;
-			posY = y;
-			this->acceleration = acceleration;
+			PUK_CORE_INFO("Copy semantics for TransformComponent");
+			position = std::make_unique<Systems::Physics::Vector2D>(std::move(*(tc.position)));
 		}
+
+		TransformComponent(TransformComponent &&tc)
+		{
+			position = std::make_unique<Systems::Physics::Vector2D>(std::move(*(tc.position)));
+		}
+		
 		~TransformComponent()
 		{}
 	};

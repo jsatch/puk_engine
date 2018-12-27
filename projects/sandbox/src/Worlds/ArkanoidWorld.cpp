@@ -11,6 +11,7 @@ namespace Worlds {
 		register_systems();
         
 		create_paddles_entities();
+		create_ball_entity();
         
         init();
 	}
@@ -39,6 +40,10 @@ namespace Worlds {
 		//Event system
 		(*event_system).register_component<Components::InputMapComponent>();
 		(*event_system).register_component<Components::InputHandlerComponent>();
+
+		//PhysicsSystem
+		physics_system = std::make_shared<Systems::Physics::PhysicsSystem>();
+
 	}
 
 	void ArkanoidWorld::define_global_handlers()
@@ -54,6 +59,7 @@ namespace Worlds {
 	{
 		register_system(render_system);
 		register_system(event_system);
+		register_system(physics_system);
 	}
     
     void ArkanoidWorld::init()
@@ -63,6 +69,7 @@ namespace Worlds {
         // Loading sprite
         (*render_system).loading_sprite(*paddle_entity1);
 		(*render_system).loading_sprite(*paddle_entity2);
+		(*render_system).loading_sprite(*ball_entity);
     }
 
 	void ArkanoidWorld::create_paddles_entities()
@@ -75,7 +82,8 @@ namespace Worlds {
 
 	void ArkanoidWorld::create_ball_entity()
 	{
-
+		ball_entity = std::make_shared<Entities::Ball>(400.0f, 300.0f);
+		add_entity(ball_entity);
 	}
 
 	void ArkanoidWorld::create_brick_entity()
